@@ -1,7 +1,11 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-	mattermost
-	discord
+    discord
+    whatsapp-electron
+    thunderbird
+    zoom
   ];
+
+  # services.mattermost.enable = true;
 }

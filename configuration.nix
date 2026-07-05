@@ -3,11 +3,17 @@
   imports = [
       ./hardware-configuration.nix
 
-      ./packages/shell.nix
-      ./packages/hypr.nix
-      ./packages/fonts.nix
+      ./packages/browser.nix
+      ./packages/creativity.nix
       ./packages/editor.nix
+      ./packages/fonts.nix
+      ./packages/git.nix
+      ./packages/hypr.nix
+      ./packages/media.nix
+      ./packages/security.nix
+      ./packages/shell.nix
       ./packages/social.nix
+      ./packages/sound.nix
       ./packages/utils.nix
     ];
 
@@ -74,19 +80,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
-
-  # programs.firefox.enable = true;
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    wget
-    vivaldi
-    kitty
-    # discord
-  ];
 
   nixpkgs.config.allowUnfree = true;
 
