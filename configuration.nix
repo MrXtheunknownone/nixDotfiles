@@ -9,6 +9,7 @@
       ./packages/fonts.nix
       ./packages/editor.nix
       ./packages/social.nix
+      ./packages/utils.nix
     ];
 
   nix.settings.experimental-features = [
@@ -71,9 +72,6 @@
   users.users.tim = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   # programs.firefox.enable = true;
