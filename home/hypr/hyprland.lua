@@ -25,7 +25,7 @@ hl.monitor({
 hl.on("hyprland.start", function()
     -- hl.exec_cmd("nm-applet")
     hl.exec_cmd("swaync")
-    hl.exec_cmd("waybar & hyprpaper")
+    hl.exec_cmd("waybar")
     hl.exec_cmd("hyprlock")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")

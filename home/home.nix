@@ -34,6 +34,7 @@
   # Waybar
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
   xdg.configFile."waybar/style.css".source = ./waybar/style.css;
+  xdg.configFile."waybar/colors.css".source = ./waybar/colors.css;
 
   # Wofi
   xdg.configFile."wofi/config".source = ./wofi/config;
