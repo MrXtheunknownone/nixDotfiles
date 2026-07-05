@@ -1,9 +1,8 @@
 { config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [
       ./hardware-configuration.nix
+
       ./packages/shell.nix
       ./packages/hypr.nix
       ./packages/fonts.nix
@@ -11,6 +10,8 @@
       ./packages/social.nix
       ./packages/utils.nix
     ];
+
+  home-manager.users.tim = import ./home/home.nix;
 
   nix.settings.experimental-features = [
     "nix-command"

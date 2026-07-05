@@ -1,0 +1,56 @@
+
+
+  /* --bg-color: #0e2c07; */
+  /* --primary-color: #40b55f; */
+  /* --secondary-color: #093e16; */
+  /* --font-color: #4fbf83 */
+
+
+
+window {
+        margin: 5px;
+        border: 2px solid #0e2c07;
+        background-color: #0e2c07;
+}
+
+#input {
+        margin: 5px;
+        border: 2px solid #093e16;
+        color: #40b55f;
+        background-color: #093e16;
+}
+
+#inner-box {
+        margin: 5px;
+        border: 2px solid #0e2c07;
+        background-color: #0e2c07;
+}
+
+#inner-box image {
+        margin-right: 1rem;
+}
+
+#outer-box {
+        margin: 5px;
+        border: 2px solid #0e2c07;
+        background-color: #0e2c07;
+}
+
+#scroll {
+        margin: 5px;
+        border: 2px solid #0e2c07;
+        background-color: #0e2c07;
+}
+
+#entry:selected {
+background-color: #4fbf83;
+}
+
+#text:selected {
+color: #0e2c07;
+}
+
+#text {
+        margin: 5px;
+        color: #40b55f;
+}

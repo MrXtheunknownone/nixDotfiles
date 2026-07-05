@@ -1,0 +1,69 @@
+@import 'colors.css';
+
+* {
+        border: none;
+        border-radius: 0px;
+        outline: none;
+        margin: 0px;
+        padding: 0px 2;
+        min-height: 0px;
+
+        font-family: "JetBrainsMono Nerd Font Mono", "sans-serif";
+        font-size: 13px;
+        color: @green;
+}
+
+window#waybar {
+        background: transparent;
+        padding: 0px;
+        margin: 0px;
+}
+
+tooltip {
+        background: @bg_dim;
+        border: 1px solid @bg4;
+        border-radius: 12px;
+}
+
+#workspaces {
+        padding: 0px 0px;
+}
+
+#workspaces button {
+        padding: 0px 3px;
+        color: @green;
+        background-color: @bg_dim;
+        border-radius: 30px;
+        margin: 0px 3px;
+        transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+        color: @bg_dim;
+        background-color: @green;
+        padding: 0px 0px;
+        transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+        color: @bg_dim;
+        background-color: @bg_visual;
+        transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.urgent {
+        color: @bg_dim;
+        background-color: @red;
+        transition: all 0.3s ease-in-out;
+}
+
+.modules-right * {
+        padding: 0px 2px;
+        margin: 0px 10px;
+}
+
+.modules-center * {
+        padding: 0px 2px;
+        margin: 0px 5px;
+}
+
