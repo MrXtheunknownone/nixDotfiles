@@ -4,7 +4,7 @@
 
         "modules-left": [ "hyprland/workspaces", "tray"],
         "modules-center": [ "clock" ],
-        "modules-right": [ "pulseaudio", "network", "custom/notification" ],
+        "modules-right": [ "pulseaudio", "network", "battery", "custom/notification" ],
 
         "clock": {
             "interval": 60,
@@ -50,6 +50,16 @@
             "tooltip-format-ethernet": "{ifname} ",
             "tooltip-format-disconnected": "Disconnected",
             "max-length": 50
+        },
+        "battery": {
+            "format": "{icon}",
+            "format-charging": "",
+            "format-full": "",
+            "tooltip": true,
+            "tooltip-format": "{capacity}%",
+            "format-icons": [
+                "", "", "", "", ""
+            ]
         },
         "custom/notification": {
             "tooltip": true,

@@ -11,7 +11,7 @@ Scope note: this is currently a single-host personal flake for `mrnix` only. I'v
 ### Core system
 - [x] Flake with pinned `nixpkgs` + `home-manager`, single `mrnix` host
 - [x] Hardware config generated from the real disk layout (btrfs `/`, vfat `/boot`, swap)
-- [ ] Display manager (`greetd`) to actually start a Hyprland session
+- [x] Display manager (`greetd`) to actually start a Hyprland session
 - [ ] NVIDIA driver config (`hardware.nvidia.*`, `hardware.graphics.enable`)
 - [ ] Audio (`services.pipewire.*` is never enabled)
 - [ ] Docker (`virtualisation.docker.enable`)
