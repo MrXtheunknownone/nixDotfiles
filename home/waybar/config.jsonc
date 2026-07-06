@@ -40,13 +40,13 @@
             // "ignored-sinks": ["Easy Effects Sink"]
         },
         "network": {
-            "interface": "eno1",
+            // "interface": "en*|eth*|wl*|ww*",
             "format": "{ifname}",
             "format-wifi": " {essid}",
             "format-ethernet": "󰈁 {bandwidthUpBytes} | {bandwidthDownBytes}",
             "format-disconnected": "󰱶",
             "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-wifi": " {bandwidthUpBytes} | {bandwidthDownBytes}",
             "tooltip-format-ethernet": "{ifname} ",
             "tooltip-format-disconnected": "Disconnected",
             "max-length": 50
