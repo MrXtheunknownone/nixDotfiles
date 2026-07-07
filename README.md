@@ -12,7 +12,7 @@ Scope note: this is currently a single-host personal flake for `mrnix` only. I'v
 - [x] Flake with pinned `nixpkgs` + `home-manager`, single `mrnix` host
 - [x] Hardware config generated from the real disk layout (btrfs `/`, vfat `/boot`, swap)
 - [x] Host/module split (`hosts/<name>/` + `modules/base.nix`, exported as `nixosModules.base`) so this flake can be reused as an input by other flakes without pulling in host-specific hardware config
-- [ ] Display manager (`greetd`) to actually start a Hyprland session
+- [x] Display manager (`greetd`) to actually start a Hyprland session
 - [ ] NVIDIA driver config (`hardware.nvidia.*`, `hardware.graphics.enable`)
 - [ ] Audio (`services.pipewire.*` is never enabled)
 - [ ] Docker (`virtualisation.docker.enable`)

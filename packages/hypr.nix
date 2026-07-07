@@ -11,4 +11,15 @@
     swaynotificationcenter
 	libnotify
   ];
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        user = "tim";
+        command = "start-hyprland";
+      };
+      default_session = initial_session;
+    };
+  };
 }
