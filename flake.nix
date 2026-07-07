@@ -11,11 +11,14 @@
 
   outputs = { self, nixpkgs, home-manager, ...}:
     let lib = nixpkgs.lib; in {
+      nixosModules.base = import ./modules/base.nix;
+
       nixosConfigurations = {
         mrnix = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-          ./configuration.nix
+          ./hosts/mrnix
+          self.nixosModules.base
           home-manager.nixosModules.default
           ];
         };

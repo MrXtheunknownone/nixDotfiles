@@ -11,13 +11,14 @@ Scope note: this is currently a single-host personal flake for `mrnix` only. I'v
 ### Core system
 - [x] Flake with pinned `nixpkgs` + `home-manager`, single `mrnix` host
 - [x] Hardware config generated from the real disk layout (btrfs `/`, vfat `/boot`, swap)
+- [x] Host/module split (`hosts/<name>/` + `modules/base.nix`, exported as `nixosModules.base`) so this flake can be reused as an input by other flakes without pulling in host-specific hardware config
 - [ ] Display manager (`greetd`) to actually start a Hyprland session
 - [ ] NVIDIA driver config (`hardware.nvidia.*`, `hardware.graphics.enable`)
 - [ ] Audio (`services.pipewire.*` is never enabled)
 - [ ] Docker (`virtualisation.docker.enable`)
 - [ ] Printing (`cups`) and firewall
 - [ ] Declarative disk partitioning via [disko](https://github.com/nix-community/disko), instead of the manually generated `hardware-configuration.nix`
-- [ ] Multi-host structure to combine this with a separate work-machine flake
+- [x] Multi-host structure to combine this with a separate work-machine flake — done via the `nixosModules.base` export; a private `work-credentials` flake (isys GitLab) consumes it for a second host, `worknix`. See [`work_setup_guide.md`](work_setup_guide.md).
 
 ### Desktop (Hyprland)
 - [x] Hyprland + waybar + wofi + hyprlock/hypridle/hyprpaper + kitty wired in as real dotfiles, not defaults
