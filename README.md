@@ -18,7 +18,7 @@ Scope note: this is currently a single-host personal flake for `mrnix` only. I'v
 - [ ] Docker (`virtualisation.docker.enable`)
 - [ ] Printing (`cups`) and firewall
 - [ ] Declarative disk partitioning via [disko](https://github.com/nix-community/disko), instead of the manually generated `hardware-configuration.nix`
-- [x] Multi-host structure to combine this with a separate work-machine flake — done via the `nixosModules.base` export; a private `work-credentials` flake (isys GitLab) consumes it for a second host, `worknix`. See [`work_setup_guide.md`](work_setup_guide.md).
+- [x] Multi-host structure to combine this with a separate work-machine flake — done via the `nixosModules.base` export; a private `work-credentials` flake (isys GitLab) consumes it for a second host, `worknix`. See [`guides/work_setup_guide.md`](guides/work_setup_guide.md).
 
 ### Desktop (Hyprland)
 - [x] Hyprland + waybar + wofi + hyprlock/hypridle/hyprpaper + kitty wired in as real dotfiles, not defaults
