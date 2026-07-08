@@ -3,6 +3,7 @@
   imports = [
     ../packages/browser.nix
     ../packages/creativity.nix
+    ../packages/development.nix
     ../packages/editor.nix
     ../packages/fonts.nix
     ../packages/git.nix
@@ -31,7 +32,7 @@
 
   users.users.tim = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   nixpkgs.config.allowUnfree = true;

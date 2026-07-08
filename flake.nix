@@ -3,10 +3,17 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
+
     home-manager = {
         url = "github:nix-community/home-manager/release-26.05";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # TODO TL: Could i need that?
+    # compose2nix = {
+    #   url = "github:aksiksi/compose2nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ...}:

@@ -5,6 +5,7 @@ My personal NixOS + home-manager flake for `mrnix`, my desktop — migrating it 
 The machine is an AMD CPU + NVIDIA GPU desktop running Hyprland on Wayland, with a single ultrawide monitor. This repo is a work in progress — it hasn't been switched to on real hardware yet.
 
 Scope note: this is currently a single-host personal flake for `mrnix` only. I've also got a work machine; combining the two into one flake is a future step, not something this repo tries to do yet.
+At the moment this setup runs on a machine without a nvidia gpu which proves that it works for now, but there will be the need for some flag like NVIDIA_ENABLED maybe
 
 ## Status
 
@@ -13,10 +14,10 @@ Scope note: this is currently a single-host personal flake for `mrnix` only. I'v
 - [x] Hardware config generated from the real disk layout (btrfs `/`, vfat `/boot`, swap)
 - [x] Host/module split (`hosts/<name>/` + `modules/base.nix`, exported as `nixosModules.base`) so this flake can be reused as an input by other flakes without pulling in host-specific hardware config
 - [x] Display manager (`greetd`) to actually start a Hyprland session
-- [ ] NVIDIA driver config (`hardware.nvidia.*`, `hardware.graphics.enable`)
-- [ ] Audio (`services.pipewire.*` is never enabled)
-- [ ] Docker (`virtualisation.docker.enable`)
-- [ ] Printing (`cups`) and firewall
+- [?] NVIDIA driver config (`hardware.nvidia.*`, `hardware.graphics.enable`)
+- [x] Audio (`services.pipewire.*` is never enabled)
+- [x] Docker (`virtualisation.docker.enable`)
+- [?] Printing (`cups`) and firewall
 - [ ] Declarative disk partitioning via [disko](https://github.com/nix-community/disko), instead of the manually generated `hardware-configuration.nix`
 - [x] Multi-host structure to combine this with a separate work-machine flake — done via the `nixosModules.base` export; a private `work-credentials` flake (isys GitLab) consumes it for a second host, `worknix`. See [`guides/work_setup_guide.md`](guides/work_setup_guide.md).
 
