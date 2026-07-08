@@ -25,7 +25,6 @@ At the moment this setup runs on a machine without a nvidia gpu which proves tha
 - [x] Hyprland + waybar + wofi + hyprlock/hypridle/hyprpaper + kitty wired in as real dotfiles, not defaults
 - [ ] Desktop portals + tray tooling (`xdg-desktop-portal-hyprland`/`-gtk`, `nwg-look`, `network-manager-applet`)
 - [ ] `home.nix` hardcodes the hyprpaper monitor to `eDP-1` instead of `DP-2`
-- [ ] Monitor refresh line likely has a typo (`5129x1440` vs `5120x1440`)
 - [ ] Orphaned/unreferenced `home/hypr/hyprpaper.conf`
 - [ ] Cursor theme (`nordic_cursors_scalable`) not captured — needs a nixpkgs-available replacement
 - [ ] swaync notification config isn't tracked anywhere — needs on-machine inspection before porting

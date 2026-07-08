@@ -9,16 +9,17 @@ hl.env("HYPRCURSOR_SIZE", "24")
 local terminal = "kitty"
 local menu = "wofi --show drun || pkill wofi"
 
-local master_monitor = "DP-2"
+local master_monitor = "eDP-1"
 
 -- Monitors
 
-hl.monitor({
-    output = master_monitor,
-    mode = "5129x1440@165.00",
-    position = "0x0",
-    scale = "1.33"
-})
+-- Ultrawide
+-- hl.monitor({
+--     output = master_monitor,
+--     mode = "5129x1440@165.00",
+--     position = "0x0",
+--     scale = "1.33"
+-- })
 
 -- Autostart
 
