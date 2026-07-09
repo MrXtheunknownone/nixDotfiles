@@ -24,21 +24,16 @@ At the moment this setup runs on a machine without a nvidia gpu which proves tha
 ### Desktop (Hyprland)
 - [x] Hyprland + waybar + wofi + hyprlock/hypridle/hyprpaper + kitty wired in as real dotfiles, not defaults
 - [ ] Desktop portals + tray tooling (`xdg-desktop-portal-hyprland`/`-gtk`, `nwg-look`, `network-manager-applet`)
-- [ ] `home.nix` hardcodes the hyprpaper monitor to `eDP-1` instead of `DP-2`
-- [ ] Orphaned/unreferenced `home/hypr/hyprpaper.conf`
-- [ ] Cursor theme (`nordic_cursors_scalable`) not captured — needs a nixpkgs-available replacement
-- [ ] swaync notification config isn't tracked anywhere — needs on-machine inspection before porting
+- [ ] Cursor theme (`nordic_cursors_scalable`) config
 - [ ] GTK theme settings aren't captured (set at runtime via `nwg-look` on the real machine, no `settings.ini` tracked)
+- [ ] `home.nix` hardcodes the hyprpaper monitor to `eDP-1` hyprland does its own monitor config
+- [ ] swaync notification config
 
 ### Shell & packages
 - [x] Core app package lists: browser, creativity, editor, security, social (minus a few stragglers), utils baseline
-- [ ] `fonts.nix` sets the default monospace font to a literal Nix attribute path instead of a font name
-- [ ] `shell.nix`'s `rebuild` alias points at the wrong repo path
-- [ ] Missing packages: `noto-fonts`, `htop`, `imagemagick`, `unzip`/`zip`, `brightnessctl`, `at`, `dkms`, `flatpak`, `rsnapshot`, `zathura`, `swayimg`, `obsidian`, `steam`
-- [ ] Full `programs.git` config (identity, aliases, `nvimdiff`, `credential.helper = oauth`) — currently just bare packages
-- [ ] `.ideavimrc` not ported
+- [ ] Missing packages: unzip/zip, swayimg, (steam)
+- [ ] Gitconfig port to nix
 - [ ] User shell/password and locale/keymap (`de` keyboard layout) not set
-- [ ] Verify the `netflix` AUR wrapper package still builds in nixpkgs before relying on it
 
 ### Roadmap: bootable USB install
 Long-run goal: plug in a USB stick, let it boot, have it partition the disk and install NixOS from this flake, reboot — done (maybe setting the account password by hand).
