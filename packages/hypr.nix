@@ -1,6 +1,12 @@
 {pkgs, ...}:
 {
-  programs.hyprland.enable = true;
+
+  # https://wiki.nixos.org/wiki/Hyprland
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     hyprlock
@@ -11,6 +17,12 @@
     swaynotificationcenter
 	libnotify
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+  };
+
 
   services.greetd = {
     enable = true;

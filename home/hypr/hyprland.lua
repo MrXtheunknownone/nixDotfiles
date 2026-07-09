@@ -1,10 +1,10 @@
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("WLR_NO_HARDWARE_CURSORS", "1")
-hl.env("GBM_BACKEND", "nvidia-drm")
-hl.env("XCURSOR_SIZE", "24")
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+-- hl.env("WLR_NO_HARDWARE_CURSORS", "1")
+-- hl.env("GBM_BACKEND", "nvidia-drm")
+-- hl.env("XCURSOR_SIZE", "24")
 -- hl.env("GDK_SCALE", "2") TODO TL: Maybe set this?
-hl.env("HYPRCURSOR_SIZE", "24")
+-- hl.env("HYPRCURSOR_SIZE", "24")
 
 local terminal = "kitty"
 local menu = "wofi --show drun || pkill wofi"
@@ -30,7 +30,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprlock")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
-    hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
+    -- hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
 end)
 
 -- Design

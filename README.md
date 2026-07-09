@@ -23,9 +23,9 @@ At the moment this setup runs on a machine without a nvidia gpu which proves tha
 
 ### Desktop (Hyprland)
 - [x] Hyprland + waybar + wofi + hyprlock/hypridle/hyprpaper + kitty wired in as real dotfiles, not defaults
-- [ ] Desktop portals + tray tooling (`xdg-desktop-portal-hyprland`/`-gtk`, `nwg-look`, `network-manager-applet`)
-- [ ] Cursor theme (`nordic_cursors_scalable`) config
-- [ ] GTK theme settings aren't captured (set at runtime via `nwg-look` on the real machine, no `settings.ini` tracked)
+- [x] Desktop portals + tray tooling (`xdg-desktop-portal-hyprland`/`-gtk`, `nwg-look`, `network-manager-applet`)
+- [x] Cursor theme (`nordic_cursors_scalable`) config
+- [x] GTK theme settings
 - [ ] `home.nix` hardcodes the hyprpaper monitor to `eDP-1` hyprland does its own monitor config
 - [ ] swaync notification config
 
