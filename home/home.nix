@@ -34,6 +34,13 @@
     };
   };
 
+  # Gnome apps
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "gnome";
+  #   style = "adwaita-dark";
+  # };
+
   # Hyprland
   xdg.configFile."./hypr/hyprland.lua".source = ./hypr/hyprland.lua;
   xdg.configFile."./hypr/hypridle.conf".source = ./hypr/hypridle.conf;

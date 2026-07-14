@@ -5,4 +5,6 @@
     neovim
     tmux
   ];
+
+  programs.neovim.defaultEditor = true;
 }
