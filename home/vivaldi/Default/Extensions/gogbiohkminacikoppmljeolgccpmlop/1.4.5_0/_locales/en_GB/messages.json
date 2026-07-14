@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "If you found this little tool helpful, please share it with friends and followers!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Auto Copying"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Auto Picker"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Colour copied"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker Updated!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "We're always keeping an eye on our app to ensure it's smooth and reliable."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Copying Type:"
+   },
+   "description": {
+      "message": "A simple and convenient colour picker. Use the interactive colour picker to select, adjust, and export colour codes."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Enjoying Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradient"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Home"
+   },
+   "loading": {
+      "description": "",
+      "message": "Loading..."
+   },
+   "name": {
+      "message": "Colour picker - Pick colour from screen"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "No colours history"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Site Palette"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Pick Colour"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Please, rate our app"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Rate app"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Rate App"
+   },
+   "recent": {
+      "description": "",
+      "message": "Recent"
+   },
+   "settings": {
+      "description": "",
+      "message": "Settings"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Share"
+   },
+   "showMore": {
+      "description": "",
+      "message": "More"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Thanks for spreading the word!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Your support means a lot!"
+   }
+}

@@ -58,6 +58,7 @@ What needs to end up in `work-credentials`, gathered from the current WSL Arch +
 | Mattermost | Company chat, `mattermost.isys.de`, native client package | new |
 | Company email | Thunderbird account config (server/auth only, not mail data) | Windows |
 | Credential vault | `Passwörter.kdbx` (KeePassXC) — referenced only, never migrated into any repo | Windows |
+| Vivaldi (bookmarks/tabs/workspaces) | Real, often work-related URLs (GitLab, Mattermost, internal tools). `nixDotfiles` tracks only theme/settings/extensions; bookmarks, `Sessions`, `Session Storage`, `Local Storage` live here instead, layered on top — see `modules/vivaldi.nix` in Part 2 | WSL `~/.config/vivaldi` (via Windows profile copy) |
 
 **Explicitly excluded** from `work-credentials` (confirmed out of scope):
 - AWS/Azure config (`~/.aws`, `~/.azure` — currently empty).
@@ -211,6 +212,11 @@ work-credentials/
     internal-ssh.nix                # ~/.ssh/config host aliases + public keys for the *.isys-software.de VMs + gitlab-isys
     atlassian.nix                   # wires the Jira/Confluence token in via a sops secret
     mattermost.nix                  # native Mattermost client package
+    vivaldi.nix                     # layers Bookmarks/Sessions/Session Storage/Local Storage on top
+                                     # of nixDotfiles' public Vivaldi seed
+  home/
+    vivaldi/                        # the private profile pieces themselves (Bookmarks, Sessions/tabs,
+                                     # Session Storage, Local Storage) — mirrors nixDotfiles' home/vivaldi/
   secrets/
     secrets.yaml                    # sops-nix encrypted
   .sops.yaml                        # age recipients
@@ -246,6 +252,7 @@ work-credentials/
           ./modules/internal-ssh.nix
           ./modules/atlassian.nix
           ./modules/mattermost.nix
+          ./modules/vivaldi.nix
         ];
       };
     };
@@ -322,6 +329,24 @@ Only host aliases and paths to keys go here — the actual private key files are
 
 Confirm `mattermost-desktop` (or whatever the current nixpkgs attribute is) exists in the pinned `nixpkgs` release before relying on it.
 
+### `modules/vivaldi.nix` (sketch)
+
+`nixDotfiles`' `home/home.nix` already seeds `~/.config/vivaldi` from its own `home/vivaldi/` (theme/settings/extensions) via a `home.activation` script (not `xdg.configFile`, since a browser profile needs continuous write access, not a read-only Nix-store symlink). This module layers the private pieces — `Bookmarks`, `Sessions`, `Session Storage`, `Local Storage` — from this repo's own `home/vivaldi/` on top, ordered to run after the public seed:
+
+```nix
+{ ... }:
+{
+  home-manager.users.tim = { config, lib, pkgs, ... }: {
+    home.activation.seedVivaldiWorkProfile = lib.hm.dag.entryAfter [ "seedVivaldiProfile" ] ''
+      $DRY_RUN_CMD mkdir -p "${config.home.homeDirectory}/.config/vivaldi"
+      $DRY_RUN_CMD ${pkgs.rsync}/bin/rsync -a --ignore-existing "${../home/vivaldi}/" "${config.home.homeDirectory}/.config/vivaldi/"
+    '';
+  };
+}
+```
+
+This relies on NixOS's module system merging multiple `home-manager.users.tim` definitions (this module's, and `nixDotfiles.nixosModules.base`'s) contributed by different NixOS modules into one combined home-manager configuration — confirm with `nix flake check` once `worknix` is buildable; not verified against a real build yet.
+
 ### `.sops.yaml` (sketch)
 
 ```yaml
@@ -370,3 +395,4 @@ creation_rules:
 - [ ] `mrnix` still builds standalone from `nixDotfiles` alone.
 - [ ] `worknix` builds from `work-credentials` (pulling in `nixDotfiles` as an input).
 - [ ] On real hardware: VPN connects, SSH to one internal VM succeeds, Mattermost opens and points at `mattermost.isys.de`, Atlassian token is usable.
+- [ ] Vivaldi shows the private bookmarks/tabs/workspaces on top of the public theme/settings/extensions.

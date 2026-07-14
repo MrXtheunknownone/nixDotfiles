@@ -1,0 +1,15 @@
+2026/07/14-07:53:46.799 7b48 Reusing MANIFEST C:\Users\timleupold\AppData\Local\Vivaldi\User Data\Default\Extension State/MANIFEST-000001
+2026/07/14-07:53:46.804 7b48 Recovering log #107
+2026/07/14-07:53:46.868 7b48 Reusing old log C:\Users\timleupold\AppData\Local\Vivaldi\User Data\Default\Extension State/000107.log 
+2026/07/14-09:27:58.863 7b48 Level-0 table #111: started
+2026/07/14-09:27:58.889 7b48 Level-0 table #111: 509200 bytes OK
+2026/07/14-09:27:58.895 7b48 Delete type=0 #107
+2026/07/14-09:27:58.896 7b48 Compacting 4@0 + 1@1 files
+2026/07/14-09:27:58.944 7b48 Generated table #112@0: 3 keys, 708 bytes
+2026/07/14-09:27:58.945 7b48 Compacted 4@0 + 1@1 files => 708 bytes
+2026/07/14-09:27:58.946 7b48 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/14-09:27:58.947 7b48 Delete type=2 #99
+2026/07/14-09:27:58.947 7b48 Delete type=2 #102
+2026/07/14-09:27:58.947 7b48 Delete type=2 #105
+2026/07/14-09:27:58.947 7b48 Delete type=2 #108
+2026/07/14-09:27:58.947 7b48 Delete type=2 #111

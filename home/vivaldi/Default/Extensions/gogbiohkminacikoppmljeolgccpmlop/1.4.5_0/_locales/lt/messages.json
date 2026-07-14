@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Jei šis įrankis buvo naudingas, pasidalinkite juo su draugais ir sekėjais!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatinis kopijavimas"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatinis pasirinkimas"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Spalva nukopijuota"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker atnaujintas!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Mes visada stebime Color Picker, kad jis veiktų sklandžiai ir patikimai."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopijavimo tipas:"
+   },
+   "description": {
+      "message": "Paprastas ir patogus spalvų parinkiklis. Naudokite interaktyvų įrankį spalvoms pasirinkti, koreguoti ir eksportuoti jų kodus."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Patinka Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradientas"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Pagrindinis"
+   },
+   "loading": {
+      "description": "",
+      "message": "Įkeliama..."
+   },
+   "name": {
+      "message": "Spalvų parinkiklis - Pipetė"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Nėra spalvų istorijos"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Svetainės paletė"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Pasirinkti spalvą"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Prašome įvertinti mūsų programą"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Įvertinti programą"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Įvertinti programą"
+   },
+   "recent": {
+      "description": "",
+      "message": "Naujausi"
+   },
+   "settings": {
+      "description": "",
+      "message": "Nustatymai"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Dalintis"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Daugiau"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Ačiū, kad dalinatės!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Jūsų palaikymas labai svarbus!"
+   }
+}

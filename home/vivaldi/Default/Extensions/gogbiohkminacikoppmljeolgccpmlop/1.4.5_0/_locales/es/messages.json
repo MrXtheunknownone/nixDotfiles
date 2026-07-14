@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Si encontraste útil esta herramienta, ¡compártela con amigos y seguidores!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Copia automática"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Selector automático"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Color copiado"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "¡Color Picker actualizado!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Siempre vigilamos Color Picker para asegurar que sea fluido y confiable."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Tipo de copia:"
+   },
+   "description": {
+      "message": "Un selector de color simple y práctico. Usa la herramienta interactiva para elegir, ajustar y exportar los códigos de color."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "¿Disfrutas de Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradiente"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Inicio"
+   },
+   "loading": {
+      "description": "",
+      "message": "Cargando..."
+   },
+   "name": {
+      "message": "Selector de color - Cuentagotas"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Sin historial de colores"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Paleta del sitio"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Elegir color"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Por favor, califica nuestra aplicación"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Calificar aplicación"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Calificar aplicación"
+   },
+   "recent": {
+      "description": "",
+      "message": "Reciente"
+   },
+   "settings": {
+      "description": "",
+      "message": "Configuraciones"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Compartir"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Más"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "¡Gracias por difundir la palabra!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "¡Tu apoyo significa mucho!"
+   }
+}

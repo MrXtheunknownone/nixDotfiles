@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Jeśli to narzędzie było pomocne, podziel się nim z przyjaciółmi i obserwującymi!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatyczne kopiowanie"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatyczny wybór"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Kolor skopiowany"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker zaktualizowany!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Zawsze obserwujemy Color Picker, aby zapewnić jego płynne i niezawodne działanie."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Typ kopiowania:"
+   },
+   "description": {
+      "message": "Prosty i wygodny selektor kolorów. Użyj interaktywnego narzędzia, aby wybrać, dostosować i eksportować kody kolorów."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Podoba Ci się Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradient"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Strona główna"
+   },
+   "loading": {
+      "description": "",
+      "message": "Ładowanie..."
+   },
+   "name": {
+      "message": "Próbnik kolorów - Pipeta"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Brak historii kolorów"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Paleta strony"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Wybierz kolor"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Proszę, oceń naszą aplikację"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Oceń aplikację"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Oceń aplikację"
+   },
+   "recent": {
+      "description": "",
+      "message": "Ostatnie"
+   },
+   "settings": {
+      "description": "",
+      "message": "Ustawienia"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Udostępnij"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Więcej"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Dziękujemy za rozpowszechnianie!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Twoje wsparcie wiele znaczy!"
+   }
+}

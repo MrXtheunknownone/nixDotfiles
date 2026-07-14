@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Jos tämä työkalu oli hyödyllinen, jaa se ystävien ja seuraajien kanssa!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automaattinen kopiointi"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automaattinen valitsin"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Väri kopioitu"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker päivitetty!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Pidämme Color Pickerin aina silmällä varmistaaksemme sen sujuvuuden ja luotettavuuden."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopiointityyppi:"
+   },
+   "description": {
+      "message": "Yksinkertainen ja kätevä värivalitsin. Käytä interaktiivista työkalua valitaksesi, säätääksesi ja viedäksesi värikoodeja."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Pidätkö Color Pickeristä?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Liukuväri"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Koti"
+   },
+   "loading": {
+      "description": "",
+      "message": "Ladataan..."
+   },
+   "name": {
+      "message": "Värivalitsin - Pipetti"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Ei värihistoriaa"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Sivun paletti"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Valitse väri"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Arvioi sovelluksemme"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Arvioi sovellus"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Arvioi sovellus"
+   },
+   "recent": {
+      "description": "",
+      "message": "Viimeisimmät"
+   },
+   "settings": {
+      "description": "",
+      "message": "Asetukset"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Jaa"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Lisää"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Kiitos levittämisestä!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Tukesi merkitsee paljon!"
+   }
+}
