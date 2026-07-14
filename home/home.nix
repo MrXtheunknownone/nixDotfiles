@@ -7,6 +7,33 @@
 
   programs.home-manager.enable = true;
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-hyprcursors";
+    size = 16;
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.nordic;
+      name = "Nordic";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "JetBrains Mono";
+      size = 11;
+    };
+  };
+
   # Hyprland
   xdg.configFile."./hypr/hyprland.lua".source = ./hypr/hyprland.lua;
   xdg.configFile."./hypr/hypridle.conf".source = ./hypr/hypridle.conf;
