@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Se achou esta ferramenta útil, partilhe-a com amigos e seguidores!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Cópia automática"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Seletor automático"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Cor copiada"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker atualizado!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Estamos sempre a monitorizar o Color Picker para garantir que seja fluido e fiável."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Tipo de cópia:"
+   },
+   "description": {
+      "message": "Um seletor de cores simples e prático. Utilize a ferramenta interativa para selecionar, ajustar e exportar códigos de cores."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Gosta do Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradiente"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Início"
+   },
+   "loading": {
+      "description": "",
+      "message": "A carregar..."
+   },
+   "name": {
+      "message": "Seletor de cores - Conta gotas"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Sem histórico de cores"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Paleta do site"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Escolher cor"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Por favor, avalie a nossa aplicação"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Avaliar aplicação"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Avaliar aplicação"
+   },
+   "recent": {
+      "description": "",
+      "message": "Recente"
+   },
+   "settings": {
+      "description": "",
+      "message": "Definições"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Partilhar"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Mais"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Obrigado por divulgar!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "O seu apoio significa muito!"
+   }
+}

@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Als je deze tool nuttig vond, deel hem dan met vrienden en volgers!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatisch kopiëren"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatische kiezer"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Kleur gekopieerd"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker bijgewerkt!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "We houden Color Picker altijd in de gaten om te zorgen dat het soepel en betrouwbaar blijft."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopieertype:"
+   },
+   "description": {
+      "message": "Een eenvoudige en handige kleurkiezer. Gebruik de interactieve tool om kleurcodes te selecteren, aan te passen en te exporteren."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Geniet je van Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradiënt"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Home"
+   },
+   "loading": {
+      "description": "",
+      "message": "Laden..."
+   },
+   "name": {
+      "message": "Color picker - Kleurenkiezer"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Geen kleurgeschiedenis"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Sitepalet"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Kleur kiezen"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Beoordeel onze app"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "App beoordelen"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "App beoordelen"
+   },
+   "recent": {
+      "description": "",
+      "message": "Recent"
+   },
+   "settings": {
+      "description": "",
+      "message": "Instellingen"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Delen"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Meer"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Bedankt voor het verspreiden!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Jouw steun betekent veel!"
+   }
+}

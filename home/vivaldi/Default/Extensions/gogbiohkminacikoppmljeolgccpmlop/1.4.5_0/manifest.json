@@ -1,0 +1,40 @@
+{
+   "action": {
+      "default_icon": "icons/icon-128_x_128.png",
+      "default_popup": "src/layouts/popup.html"
+   },
+   "background": {
+      "service_worker": "src/js/serviceWorker.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "js": [ "src/js/contentScript.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "src/js/colorsPickerSiteContent.js" ],
+      "matches": [ "*://colorspicker.net/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "default_locale": "en_US",
+   "description": "__MSG_description__",
+   "icons": {
+      "128": "icons/icon-128_x_128.png",
+      "16": "icons/icon-16_x_16.png",
+      "32": "icons/icon-32_x_32.png",
+      "64": "icons/icon-64_x_64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2fUPWefgleTsuCKc+XMeM/g46+q/SOCDMueOj79NTArPsb/saDhUJRnjHl46n/BFGwThZSPQjiTQxMgKEWDu04tXQAZxi02LtpNC64svwCNhHyHI0rwaONBTCm41OGW2Q9a8sQAJXKYNzaf3xuaAhfNoUu1wq0S+XwdNCk1FNERWSRyUULhQ7Dvk2TR8BuOlM7ON/QjMH258djuinngDzGVJcsb+fb4XYTO3WZBE2QB95QjqVKwhXI+yAWZxpSIw6TeyPvrX8MypMbjkf8Eb6qC/AZ3akTxSCpRGgqkgfjYdqGAiek+lwRBHjBrxCz6LR1sQSuGfskKUaRdhisGEQQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_name__",
+   "options_ui": {
+      "open_in_tab": false,
+      "page": "src/layouts/options.html"
+   },
+   "permissions": [ "storage", "activeTab", "scripting", "contextMenus", "activeTab" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.4.5"
+}

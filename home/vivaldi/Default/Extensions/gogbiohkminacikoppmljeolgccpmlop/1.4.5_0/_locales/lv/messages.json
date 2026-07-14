@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Ja šis rīks jums noderēja, lūdzu, dalieties ar draugiem un sekotājiem!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automātiskā kopēšana"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automātiskā izvēle"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Krāsa nokopēta"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker atjaunināts!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Mēs vienmēr uzraugām Color Picker, lai nodrošinātu tā nevainojamu un uzticamu darbību."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopēšanas veids:"
+   },
+   "description": {
+      "message": "Vienkāršs un ērts krāsu izvēlētājs. Izmantojiet interaktīvo rīku, lai izvēlētos, pielāgotu un eksportētu krāsu kodus."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Vai patīk Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradients"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Sākums"
+   },
+   "loading": {
+      "description": "",
+      "message": "Ielādē..."
+   },
+   "name": {
+      "message": "Krāsu izvēlētājs - Pipete"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Nav krāsu vēstures"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Vietnes palete"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Izvēlēties krāsu"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Lūdzu, novērtējiet mūsu lietotni"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Novērtēt lietotni"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Novērtēt lietotni"
+   },
+   "recent": {
+      "description": "",
+      "message": "Jaunākie"
+   },
+   "settings": {
+      "description": "",
+      "message": "Iestatījumi"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Dalīties"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Vairāk"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Paldies, ka izplatāt ziņu!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Jūsu atbalsts daudz nozīmē!"
+   }
+}

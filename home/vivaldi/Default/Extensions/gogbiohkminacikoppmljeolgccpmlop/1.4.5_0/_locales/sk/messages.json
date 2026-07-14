@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Ak vám tento nástroj pomohol, zdieľajte ho s priateľmi a sledovateľmi!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatické kopírovanie"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatický výber"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Farba skopírovaná"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker aktualizovaný!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Vždy sledujeme Color Picker, aby bol plynulý a spoľahlivý."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Typ kopírovania:"
+   },
+   "description": {
+      "message": "Jednoduchý a praktický výber farieb. Pomocou interaktívneho nástroja môžete vybrať, upraviť a exportovať farebné kódy."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Páči sa vám Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradient"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Domov"
+   },
+   "loading": {
+      "description": "",
+      "message": "Načítava sa..."
+   },
+   "name": {
+      "message": "Výber farby - Pipeta"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Žiadna história farieb"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Paleta stránky"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Vybrať farbu"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Prosím, ohodnoťte našu aplikáciu"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Ohodnotiť aplikáciu"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Ohodnotiť aplikáciu"
+   },
+   "recent": {
+      "description": "",
+      "message": "Nedávne"
+   },
+   "settings": {
+      "description": "",
+      "message": "Nastavenia"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Zdieľať"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Viac"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Ďakujeme za šírenie!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Vaša podpora znamená veľa!"
+   }
+}

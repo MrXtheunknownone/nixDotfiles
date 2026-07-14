@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Hvis du fandt dette værktøj nyttigt, så del det med venner og følgere!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatisk kopiering"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatisk vælger"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Farve kopieret"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker opdateret!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Vi holder altid øje med Color Picker for at sikre, at den er glat og pålidelig."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopieringstype:"
+   },
+   "description": {
+      "message": "En enkel og praktisk farvevælger. Brug det interaktive værktøj til at vælge, justere og eksportere farvekoder."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Nyder du Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradient"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Hjem"
+   },
+   "loading": {
+      "description": "",
+      "message": "Indlæser..."
+   },
+   "name": {
+      "message": "Pipette - Farvevælger"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Ingen farvehistorik"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Sidepalet"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Vælg farve"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Vær venlig at bedømme vores app"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Bedøm app"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Bedøm app"
+   },
+   "recent": {
+      "description": "",
+      "message": "Seneste"
+   },
+   "settings": {
+      "description": "",
+      "message": "Indstillinger"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Del"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Mere"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Tak for at sprede budskabet!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Din støtte betyder meget!"
+   }
+}

@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Če se vam je to orodje zdelo uporabno, ga delite s prijatelji in sledilci!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Samodejno kopiranje"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Samodejni izbirnik"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Barva kopirana"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker posodobljen!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Color Picker vedno spremljamo, da zagotovimo njegovo gladko in zanesljivo delovanje."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Vrsta kopiranja:"
+   },
+   "description": {
+      "message": "Preprost in priročen izbirnik barv. Uporabite interaktivno orodje za izbiro, prilagajanje in izvoz barvnih kod."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Vam je Color Picker všeč?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Gradient"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Domov"
+   },
+   "loading": {
+      "description": "",
+      "message": "Nalaganje..."
+   },
+   "name": {
+      "message": "Izbirnik barv - Pipeta"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Brez zgodovine barv"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Paleta strani"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Izberi barvo"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Prosimo, ocenite našo aplikacijo"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "Oceni aplikacijo"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "Oceni aplikacijo"
+   },
+   "recent": {
+      "description": "",
+      "message": "Nedavne"
+   },
+   "settings": {
+      "description": "",
+      "message": "Nastavitve"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Deli"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Več"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Hvala za širjenje besede!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Vaša podpora veliko pomeni!"
+   }
+}

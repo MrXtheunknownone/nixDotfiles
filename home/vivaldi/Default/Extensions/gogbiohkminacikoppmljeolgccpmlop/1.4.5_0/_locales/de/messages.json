@@ -1,0 +1,100 @@
+{
+   "askToShareColorPicker": {
+      "description": "",
+      "message": "Wenn Ihnen dieses Tool geholfen hat, teilen Sie es mit Freunden und Followern!"
+   },
+   "autoCopying": {
+      "description": "",
+      "message": "Automatisches Kopieren"
+   },
+   "autoPicker": {
+      "description": "",
+      "message": "Automatische Auswahl"
+   },
+   "colorCopied": {
+      "description": "",
+      "message": "Farbe kopiert"
+   },
+   "colorPickerUpdated": {
+      "description": "",
+      "message": "Color Picker aktualisiert!"
+   },
+   "colorPickerUpdatedMessage": {
+      "description": "",
+      "message": "Wir behalten Color Picker im Auge, um sicherzustellen, dass es reibungslos und zuverlässig bleibt."
+   },
+   "copyingType": {
+      "description": "",
+      "message": "Kopierart:"
+   },
+   "description": {
+      "message": "Einfacher und praktischer Farbwähler. Verwenden Sie das interaktive Tool, um Farbwerte auszuwählen, anzupassen und zu exportieren."
+   },
+   "enjoyingColorPicker": {
+      "description": "",
+      "message": "Gefällt Ihnen Color Picker?"
+   },
+   "gradient": {
+      "description": "",
+      "message": "Farbverlauf"
+   },
+   "homeTabName": {
+      "description": "",
+      "message": "Start"
+   },
+   "loading": {
+      "description": "",
+      "message": "Laden..."
+   },
+   "name": {
+      "message": "Farbwähler - Pipette"
+   },
+   "noColorsHistory": {
+      "description": "",
+      "message": "Keine Farbhistorie"
+   },
+   "pagePalletTabName": {
+      "description": "",
+      "message": "Seitenpalette"
+   },
+   "pickColor": {
+      "description": "",
+      "message": "Farbe auswählen"
+   },
+   "pleaseRateOurApp": {
+      "description": "",
+      "message": "Bitte bewerten Sie unsere App"
+   },
+   "rateApp": {
+      "description": "",
+      "message": "App bewerten"
+   },
+   "rateColorPicker": {
+      "description": "",
+      "message": "App bewerten"
+   },
+   "recent": {
+      "description": "",
+      "message": "Neueste"
+   },
+   "settings": {
+      "description": "",
+      "message": "Einstellungen"
+   },
+   "shareColorPicker": {
+      "description": "",
+      "message": "Teilen"
+   },
+   "showMore": {
+      "description": "",
+      "message": "Mehr"
+   },
+   "thanksForSpreadingTheWord": {
+      "description": "",
+      "message": "Danke fürs Weiterverbreiten!"
+   },
+   "yourSupportMeansALot": {
+      "description": "",
+      "message": "Ihre Unterstützung bedeutet viel!"
+   }
+}
