@@ -1,69 +1,123 @@
 @import 'colors.css';
 
-* {
-        border: none;
-        border-radius: 0px;
-        outline: none;
-        margin: 0px;
-        padding: 0px 2;
-        min-height: 0px;
+/* ---- LCARS Waybar · Picard theme · slim 20px rail ----
+   The LCARS look here comes from solid colour blocks, black seams between
+   them, and rounded terminators on the FAR ends only. GTK CSS cannot draw
+   the concave inner cut of a true LCARS elbow, so the end caps are rounded
+   pill terminators — the honest limit on a 20px horizontal bar. */
 
-        font-family: "JetBrainsMono Nerd Font Mono", "sans-serif";
-        font-size: 13px;
-        color: @green;
+* {
+  border: none;
+  border-radius: 0;
+  outline: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrainsMono Nerd Font Mono", "Antonio", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: @ink;
 }
 
 window#waybar {
-        background: transparent;
-        padding: 0px;
-        margin: 0px;
+  background: transparent;
+}
+
+/* the whole rail sits on black; blocks are separated by 4px black seams */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0;
 }
 
 tooltip {
-        background: @bg_dim;
-        border: 1px solid @bg4;
-        border-radius: 12px;
+  background: @well;
+  border: 1px solid @blue;
+  border-radius: 6px;
+}
+tooltip label {
+  color: @ghost;
+  font-weight: 600;
+  padding: 2px 4px;
 }
 
+/* ---- LEFT: workspaces (far-left terminator) ---- */
 #workspaces {
-        padding: 0px 0px;
+  background: @well;
+  padding: 2px;
+  margin: 0 4px 0 0;
+  border-radius: 11px 3px 3px 11px;   /* rounded LCARS terminator on the far left */
 }
-
 #workspaces button {
-        padding: 0px 3px;
-        color: @green;
-        background-color: @bg_dim;
-        border-radius: 30px;
-        margin: 0px 3px;
-        transition: all 0.3s ease-in-out;
+  color: @lgray;
+  background: @seg;
+  padding: 0 8px;
+  margin: 0 1px;
+  border-radius: 3px;
+  transition: background-color 0.12s steps(1), color 0.12s steps(1);
 }
-
 #workspaces button.active {
-        color: @bg_dim;
-        background-color: @green;
-        padding: 0px 0px;
-        transition: all 0.3s ease-in-out;
+  color: @ink;
+  background: @bright;
 }
-
 #workspaces button:hover {
-        color: @bg_dim;
-        background-color: @bg_visual;
-        transition: all 0.3s ease-in-out;
+  color: @ink;
+  background: @blue;
 }
-
 #workspaces button.urgent {
-        color: @bg_dim;
-        background-color: @red;
-        transition: all 0.3s ease-in-out;
+  color: @ink;
+  background: @term;
 }
 
-.modules-right * {
-        padding: 0px 2px;
-        margin: 0px 10px;
+/* ---- LEFT: tray ---- */
+#tray {
+  background: @well;
+  padding: 0 8px;
+  margin: 0 4px 0 0;
+  border-radius: 3px;
+}
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* ---- CENTER: clock (isolated pill) ---- */
+#clock {
+  background: @blue;
+  color: @ink;
+  padding: 0 16px;
+  border-radius: 11px;
+  letter-spacing: 1.5px;
 }
 
-.modules-center * {
-        padding: 0px 2px;
-        margin: 0px 5px;
+/* ---- RIGHT: status blocks, seamed ---- */
+#pulseaudio,
+#network,
+#battery {
+  color: @ink;
+  padding: 0 10px;
+  margin: 0 0 0 4px;
+  letter-spacing: 1px;
 }
+#pulseaudio { background: @vol; }
+#pulseaudio.muted { background: @gray; color: @ghost; }
 
+#network { background: @blue; }
+#network.disconnected { background: @gray; color: @ghost; }
+
+#battery { background: @bright; }
+#battery.charging { background: @bright; }
+#battery.warning:not(.charging) { background: @vol; }
+#battery.critical:not(.charging) {
+  background: @term;
+  color: @ink;
+  /* animation: blink 1s steps(2, jump-none) infinite;*/
+}
+@keyframes blink { 50% { opacity: 0.35; } }
+
+/* ---- RIGHT: notification (far-right terminator) ---- */
+#custom-notification {
+  background: @notif;
+  color: @ink;
+  padding: 0 11px;
+  margin: 0 0 0 4px;
+  border-radius: 3px 11px 11px 3px;   /* rounded LCARS terminator on the far right */
+}

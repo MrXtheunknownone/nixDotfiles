@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     vivaldi
+    qutebrowser
   ];
 
   # Chromium/Electron apps default to XWayland unless told otherwise; this makes
