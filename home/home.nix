@@ -53,8 +53,13 @@
       wallpaper = [
         {
           fit_mode = "cover";
-          monitor = "eDP-1"; # TODO TL: How to set dynamically?
+          monitor = "*";
           path = "${config.home.homeDirectory}/pictures/wallpapers/voyager_orbit.jpg";
+        }
+        {
+          fit_mode = "cover";
+          monitor = "desc:Iiyama North America PL4580DQ 1222642810142";
+          path = "${config.home.homeDirectory}/pictures/wallpapers/voyager_engineering_panel.jpg";
         }
       ];
     };

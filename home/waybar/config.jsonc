@@ -8,7 +8,7 @@
 
     "modules-left": [ "hyprland/workspaces", "tray" ],
     "modules-center": [ "clock" ],
-    "modules-right": [ "pulseaudio", "network", "battery", "custom/notification" ],
+    "modules-right": [ "pulseaudio", "custom/vpn", "network", "battery", "custom/notification" ],
 
     "clock": {
         "interval": 60,
@@ -35,6 +35,14 @@
             "default": ["", ""]
         },
         "scroll-step": 1
+    },
+    "custom/vpn": {
+        "exec": "systemctl is-active --quiet openvpn-isys.service && printf '{\"text\":\"\",\"class\":\"active\",\"tooltip\":\"VPN: ON\"}' || printf '{\"text\":\"\",\"class\":\"inactive\",\"tooltip\":\"VPN: OFF\"}'",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "systemctl is-active --quiet openvpn-isys.service && sudo systemctl stop openvpn-isys.service || sudo systemctl start openvpn-isys.service; pkill -RTMIN+8 waybar",
+        "signal": 8,
+        "tooltip": true
     },
     "network": {
         "format": "{ifname}",

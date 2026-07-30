@@ -14,6 +14,20 @@ local master_monitor = "eDP-1"
 -- Monitors
 
 -- Ultrawide
+hl.monitor({
+    output = "desc:Iiyama North America PL4580DQ 1222642810142",
+    mode = "5120x1440@120",
+    position = "0x0",
+    scale = "1.33"
+})
+
+hl.monitor({
+    output = "eDP-1", -- Laptop Display
+    mode = "1920x1200@60",
+    position = "auto",
+    scale = "1.0"
+})
+
 -- hl.monitor({
 --     output = master_monitor,
 --     mode = "5129x1440@165.00",

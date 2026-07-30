@@ -101,6 +101,14 @@ tooltip label {
 #pulseaudio { background: @vol; }
 #pulseaudio.muted { background: @gray; color: @ghost; }
 
+#custom-vpn {
+  min-width: 10px;
+  padding: 0 8px;
+  margin: 0 0 0 4px;
+  background: @vpn;
+}
+#custom-vpn.inactive { background: @gray; }
+
 #network { background: @blue; }
 #network.disconnected { background: @gray; color: @ghost; }
 
