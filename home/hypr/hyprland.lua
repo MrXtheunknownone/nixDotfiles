@@ -44,6 +44,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprlock")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("bash ~/.config/hypr/workspace-manager.sh daemon")
     -- hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
 end)
 
@@ -128,10 +129,6 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 
 -- Rules
 
-hl.workspace_rule({ workspace = 1, monitor = master_monitor, persistent = true })
-hl.workspace_rule({ workspace = 2, monitor = master_monitor, persistent = true })
-hl.workspace_rule({ workspace = 3, monitor = master_monitor, persistent = true })
-hl.workspace_rule({ workspace = 4, monitor = master_monitor, persistent = true })
 
 -- Tiling
 
@@ -211,7 +208,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh new"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/tim/.config/waybar/launch.sh"))
@@ -262,9 +260,11 @@ end
 hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
 
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+-- Cycle workspaces on current monitor
+hl.bind(mainMod .. " + mouse_down", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle +1"))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle -1"))
+hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle +1"))
+hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle -1"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

@@ -1,0 +1,7 @@
+normal_window = true
+insensitive = true
+hide_scroll = true
+single_click = true
+lines = 10
+width = 30%
+allow_images = true

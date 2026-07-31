@@ -16,6 +16,8 @@
     wofi
     swaynotificationcenter
 	libnotify
+    socat
+    jq
   ];
 
   xdg.portal = {
