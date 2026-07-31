@@ -1,56 +1,117 @@
+/* LCARS Wofi · Picard theme · matches Waybar palette */
 
+@define-color bg      #000000;
+@define-color ink     #06080c;
+@define-color well    #1c3c55;
+@define-color seg     #2f3749;
+@define-color blue    #37a6d1;
+@define-color bright  #41c4f7;
+@define-color mdblue  #2a7193;
+@define-color term    #e7442a;
+@define-color gray    #6d748c;
+@define-color lgray   #9ea5ba;
+@define-color ghost   #d2d5df;
 
-  /* --bg-color: #0e2c07; */
-  /* --primary-color: #40b55f; */
-  /* --secondary-color: #093e16; */
-  /* --font-color: #4fbf83 */
-
-
+* {
+  border: none;
+  border-radius: 0;
+  outline: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrainsMono Nerd Font Mono", "Antonio", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: @ghost;
+  transition: none;
+}
 
 window {
-        margin: 5px;
-        border: 2px solid #0e2c07;
-        background-color: #0e2c07;
+  background-color: @bg;
+  border-radius: 11px 3px 3px 11px;
+}
+
+/* Red LCARS terminator rail — ID selector beats * { border: none } */
+#outer-box {
+  background-color: @bg;
+  border-left: 14px solid @term;
+  padding: 0;
 }
 
 #input {
-        margin: 5px;
-        border: 2px solid #093e16;
-        color: #40b55f;
-        background-color: #093e16;
+  background-color: @well;
+  color: @bright;
+  caret-color: @bright;
+  padding: 0 10px;
+  margin: 0 0 4px 0;
+  min-height: 28px;
+  font-family: "JetBrainsMono Nerd Font Mono", "Antonio", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-#inner-box {
-        margin: 5px;
-        border: 2px solid #0e2c07;
-        background-color: #0e2c07;
-}
-
-#inner-box image {
-        margin-right: 1rem;
-}
-
-#outer-box {
-        margin: 5px;
-        border: 2px solid #0e2c07;
-        background-color: #0e2c07;
+#input:focus {
+  box-shadow: none;
 }
 
 #scroll {
-        margin: 5px;
-        border: 2px solid #0e2c07;
-        background-color: #0e2c07;
+  background-color: @bg;
+}
+
+#inner-box {
+  background-color: @bg;
+  padding: 0;
+}
+
+#entry {
+  background-color: @seg;
+  padding: 4px 10px;
+  margin: 0 0 2px 0;
+}
+
+#entry:last-child {
+  margin-bottom: 0;
 }
 
 #entry:selected {
-background-color: #4fbf83;
+  background-color: @bright;
 }
 
-#text:selected {
-color: #0e2c07;
+/* Constrain icon to 16px and force symbolic (monochrome) rendering */
+#entry image {
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+  -gtk-icon-size: 16px;
+  -gtk-icon-style: symbolic;
+  color: @lgray;
+  margin-right: 8px;
+}
+
+#entry:selected image {
+  color: @ink;
 }
 
 #text {
-        margin: 5px;
-        color: #40b55f;
+  color: @ghost;
+  margin: 0;
+  padding: 0;
+}
+
+#text:selected {
+  color: @ink;
+}
+
+tooltip {
+  background-color: @well;
+  border: 1px solid @blue;
+  border-radius: 6px;
+}
+
+tooltip label {
+  color: @ghost;
+  font-weight: 600;
+  padding: 2px 4px;
 }

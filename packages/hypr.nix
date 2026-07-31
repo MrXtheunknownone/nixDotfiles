@@ -15,9 +15,13 @@
     waybar
     wofi
     swaynotificationcenter
-	libnotify
+	  libnotify
     socat
     jq
+    grim
+    slurp
+    swappy
+    wl-clipboard
   ];
 
   xdg.portal = {

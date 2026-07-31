@@ -44,7 +44,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprlock")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
-    hl.exec_cmd("bash ~/.config/hypr/workspace-manager.sh daemon")
+    hl.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh daemon")
     -- hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
 end)
 
@@ -208,7 +208,7 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh new"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh new"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(menu))
@@ -216,6 +216,9 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/tim/.config/waybar/launch.sh")
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("vivaldi"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("pkill -9 waybar || waybar &"))
+
+hl.bind("Print", hl.dsp.exec_cmd('grim -o "$(hyprctl monitors -j | jq -r \'.[] | select(.focused) | .name\')" - | swappy -f -'))
+hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 
 local isInactiveTransparent = true
 local function toggle_inactive_opacity()
@@ -243,10 +246,10 @@ hl.bind(mainMod .. " + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.window.swap({ direction = "down" }))
 
 -- Resize
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({ x = -40, y = 0 }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 40, y = 0 }))
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -40 }))
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 40 }))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({ x = -40, y = 0, relative = true }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 40, y = 0, relative = true }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -40, relative = true }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 40, relative = true }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -260,11 +263,11 @@ end
 hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
 
--- Cycle workspaces on current monitor
-hl.bind(mainMod .. " + mouse_down", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle +1"))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle -1"))
-hl.bind(mainMod .. " + bracketright", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle +1"))
-hl.bind(mainMod .. " + bracketleft", hl.dsp.exec_cmd("bash ~/.config/hypr/workspace-manager.sh cycle -1"))
+-- Cycle workspaces
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + odiaeresis", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + adiaeresis", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

@@ -1,22 +1,40 @@
 #!/usr/bin/env bash
 SOCKET="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
 
+# hyprctl dispatch in Lua config mode requires Lua expressions
+hl_dispatch() {
+    hyprctl dispatch "$1"
+}
+
 init_monitors() {
     sleep 0.5  # let Hyprland settle after start/reconnect
     readarray -t monitors < <(hyprctl monitors -j | jq -r 'sort_by(.x) | .[].name')
     local i=1
     for mon in "${monitors[@]}"; do
-        hyprctl dispatch moveworkspacetomonitor "$i $mon" >/dev/null 2>&1
-        hyprctl dispatch focusmonitor "$mon" >/dev/null 2>&1
-        hyprctl dispatch workspace "$i" >/dev/null 2>&1
+        hl_dispatch "hl.dsp.workspace.move({ workspace = $i, monitor = '$mon' })"
+        hl_dispatch "hl.dsp.focus({ monitor = '$mon' })"
+        hl_dispatch "hl.dsp.focus({ workspace = $i })"
         ((i++))
     done
 }
 
 new_workspace() {
-    local max
-    max=$(hyprctl workspaces -j | jq '[.[].id] | max // 0')
-    hyprctl dispatch workspace $((max + 1))
+    local mon current target
+    mon=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+    current=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .activeWorkspace.id')
+
+    # Find the lowest-id empty workspace on the current monitor (skip current)
+    target=$(hyprctl workspaces -j | jq -r --arg m "$mon" --argjson c "$current" \
+        '[.[] | select(.monitor == $m and .windows == 0 and .id != $c)] | sort_by(.id) | if length > 0 then .[0].id else "" end')
+
+    if [ -n "$target" ]; then
+        hl_dispatch "hl.dsp.focus({ workspace = $target })"
+    else
+        # No empty workspace on this monitor — create one (global max+1 is guaranteed unused)
+        local max_global
+        max_global=$(hyprctl workspaces -j | jq '[.[].id] | max // 0')
+        hl_dispatch "hl.dsp.focus({ workspace = $((max_global + 1)) })"
+    fi
 }
 
 cycle_workspace() {
@@ -39,20 +57,13 @@ cycle_workspace() {
             break
         fi
     done
-    hyprctl dispatch workspace "$next"
+    hl_dispatch "hl.dsp.focus({ workspace = $next })"
 }
 
 handle_event() {
-    case "$1" in
-        monitoradded>>*)
-            local mon="${1#monitoradded>>}"
-            local max
-            max=$(hyprctl workspaces -j | jq '[.[].id] | max // 0')
-            local next=$((max + 1))
-            sleep 0.5
-            hyprctl dispatch moveworkspacetomonitor "$next $mon" >/dev/null 2>&1
-            hyprctl dispatch focusmonitor "$mon" >/dev/null 2>&1
-            hyprctl dispatch workspace "$next" >/dev/null 2>&1
+    case "${1%%>>*}" in
+        monitoradded)
+            init_monitors
             ;;
     esac
 }

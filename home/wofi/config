@@ -3,5 +3,6 @@ insensitive = true
 hide_scroll = true
 single_click = true
 lines = 10
-width = 30%
+width = 450
 allow_images = true
+image_size = 16
