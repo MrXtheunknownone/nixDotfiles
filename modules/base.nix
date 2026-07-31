@@ -9,7 +9,6 @@
     ../packages/git.nix
     ../packages/hypr.nix
     ../packages/media.nix
-    ../packages/security.nix
     ../packages/shell.nix
     ../packages/social.nix
     ../packages/sound.nix

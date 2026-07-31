@@ -41,12 +41,23 @@ tooltip label {
   padding: 2px 4px;
 }
 
+/* ---- LEFT: red LCARS endcap (far-left terminator) ---- */
+#custom-lcars-endcap {
+  background: @term;
+  color: @ink;
+  padding: 0 8px;
+  margin: 0 4px 0 0;
+  border-radius: 11px 3px 3px 11px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
 /* ---- LEFT: workspaces (far-left terminator) ---- */
 #workspaces {
   background: @well;
   padding: 2px;
   margin: 0 4px 0 0;
-  border-radius: 11px 3px 3px 11px;   /* rounded LCARS terminator on the far left */
+  border-radius: 3px;
 }
 #workspaces button {
   color: @lgray;
@@ -124,7 +135,7 @@ tooltip label {
 
 /* ---- RIGHT: notification (far-right terminator) ---- */
 #custom-notification {
-  background: @notif;
+  background: @term;
   color: @ink;
   padding: 0 11px;
   margin: 0 0 0 4px;

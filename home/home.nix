@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }: {
+  imports = [ ../packages/security.nix ];
+
+  xdg.autostart.enable = true;
 
   home.username = "tim";
   home.homeDirectory = "/home/tim";

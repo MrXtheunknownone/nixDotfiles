@@ -6,9 +6,14 @@
     "spacing": 0,
     "reload_style_on_change": true,
 
-    "modules-left": [ "hyprland/workspaces", "tray" ],
+    "modules-left": [ "custom/lcars-endcap", "hyprland/workspaces", "tray" ],
     "modules-center": [ "clock" ],
     "modules-right": [ "pulseaudio", "custom/vpn", "network", "battery", "custom/notification" ],
+
+    "custom/lcars-endcap": {
+        "format": "SYS",
+        "tooltip": false
+    },
 
     "clock": {
         "interval": 60,

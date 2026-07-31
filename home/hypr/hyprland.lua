@@ -179,11 +179,13 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity  = 0.4, -- -1.0 - 1.0, 0 means no modification.
+
+        natural_scroll = true,
 
         touchpad     = {
-            --natural_scroll = false,
-	    scroll_factor = -0.3, -- TODO TL: This is device specific
+            natural_scroll = false,
+            scroll_factor  = -0.3, -- TODO TL: This is device specific
         },
     },
 })
