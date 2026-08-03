@@ -8,6 +8,7 @@
 
 local terminal = "kitty"
 local menu = "wofi --show drun || pkill wofi"
+local rofi_menu = "bash /home/tim/.config/rofi/lcars-launch.sh"
 
 local master_monitor = "eDP-1"
 
@@ -18,7 +19,7 @@ hl.monitor({
     output = "desc:Iiyama North America PL4580DQ 1222642810142",
     mode = "5120x1440@120",
     position = "0x0",
-    scale = "1.33"
+    scale = "1.3333333"
 })
 
 hl.monitor({
@@ -211,7 +212,8 @@ hl.bind(mainMod .. " + SHIFT + M",
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh new"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client --toggle-panel"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(menu))
+-- hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(rofi_menu))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/tim/.config/waybar/launch.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("vivaldi"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -246,10 +248,10 @@ hl.bind(mainMod .. " + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.window.swap({ direction = "down" }))
 
 -- Resize
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({ x = -40, y = 0, relative = true }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 40, y = 0, relative = true }))
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({ x = 0, y = -40, relative = true }))
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({ x = 0, y = 40, relative = true }))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.resize({  x = -40, y = 0,   relative = true, repeating = true  }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.resize({ x = 40,  y = 0,   relative = true, repeating = true  }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.resize({    x = 0,   y = -40, relative = true, repeating = true  }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.resize({  x = 0,   y = 40,  relative = true, repeating = true  }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -262,6 +264,10 @@ end
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- Move active workspace to next/prev monitor
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.exec_cmd('bash -c \'hyprctl dispatch "hl.dsp.workspace.move({ workspace = $(hyprctl activeworkspace -j | jq .id), monitor = \\"+1\\" })"\' '))
+hl.bind(mainMod .. " + CTRL + left",  hl.dsp.exec_cmd('bash -c \'hyprctl dispatch "hl.dsp.workspace.move({ workspace = $(hyprctl activeworkspace -j | jq .id), monitor = \\"-1\\" })"\' '))
 
 -- Cycle workspaces
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -292,6 +298,27 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Window rules
+
+-- Wofi: let GTK CSS control shape (no compositor rounding) and keep fully opaque
+hl.window_rule({
+    name     = "wofi-no-rounding",
+    match    = { class = "^wofi$" },
+    rounding = 0,
+})
+hl.window_rule({
+    name    = "wofi-opacity",
+    match   = { class = "^wofi$" },
+    opacity = "1.0 override 1.0 override",
+})
+
+-- Rofi is a Wayland layer surface (namespace: "rofi") — window_rule never fires.
+-- Use layer_rule for what is controllable.
+hl.layer_rule({
+    name  = "rofi-noblur",
+    match = { namespace = "rofi" },
+    blur  = false,
+})
+
 hl.window_rule({
     name           = "suppress-maximize-events",
     match          = { class = ".*" },

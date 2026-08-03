@@ -1,0 +1,167 @@
+/* LCARS Rofi theme — transparent window, functional sidebar mode switcher.
+   Header + footer PNG (minimal, muted color) sit as background-image.
+   Ctrl+J / Ctrl+K cycle through modes in-place.                          */
+
+configuration {
+    modi:                "drun,window,run";
+    show-icons:          true;
+    sidebar-mode:        true;
+    drun-display-format: "{name}";
+    display-drun:        "APP";
+    display-window:      "WIN";
+    display-run:         "RUN";
+    kb-accept-entry:     "Return,KP_Enter,Control+m";
+    kb-remove-to-eol:    "";
+    kb-mode-next:        "Control+j";
+    kb-mode-previous:    "Control+k";
+}
+
+* {
+    bg:      #000000;
+    ink:     #06080c;
+    well:    #1c3c55;
+    seg:     #2f3749;
+    blue:    #37a6d1;
+    bright:  #41c4f7;
+    mdblue:  #2a7193;
+    term:    #e7442a;
+    vol:     #ff977b;
+    vpn:     #4daa6e;
+    gray:    #6d748c;
+    lgray:   #9ea5ba;
+    ghost:   #d2d5df;
+    star:    #f3f4f7;
+
+    font:             "JetBrainsMono Nerd Font Mono 11";
+    background-color: transparent;
+    text-color:       @ghost;
+    border:           0;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+/* Transparent window — PNG provides header+footer, desktop shows through elsewhere.
+   442px height: 44 header + 358 content (40 inputbar + 318 listview) + 40 footer = exact fit. */
+window {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/tmp/lcars-frame-live.png", both);
+    width:            680px;
+    height:           442px;
+}
+
+/* mainbox starts below 44px header, stops 40px above footer. */
+mainbox {
+    background-color: transparent;
+    margin:           44px 0px 40px 0px;
+    orientation:      horizontal;
+    spacing:          0px;
+    children:         [ "mode-switcher", "content" ];
+}
+
+/* content: vertical wrapper for search bar + list. */
+content {
+    background-color: transparent;
+    orientation:      vertical;
+    spacing:          0px;
+    expand:           true;
+    children:         [ "inputbar", "listview" ];
+}
+
+/* ── SIDEBAR MODE SWITCHER ── */
+mode-switcher {
+    background-color: rgba(47, 55, 73, 0.92);
+    orientation:      vertical;
+    width:            72px;
+    spacing:          2px;
+    padding:          2px 0px 2px 0px;
+    expand:           false;
+}
+
+button {
+    background-color: @seg;
+    text-color:       @lgray;
+    font:             "JetBrainsMono Nerd Font Mono Bold 9";
+    padding:          0px 4px;
+    cursor:           pointer;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    expand:           true;
+    border:           0px 0px 0px 3px;
+    border-color:     @mdblue;
+}
+
+button selected {
+    background-color: @mdblue;
+    text-color:       @star;
+    border-color:     @blue;
+}
+
+/* ── SEARCH BAR ── */
+inputbar {
+    background-color: @well;
+    height:           38px;
+    margin:           0px 0px 2px 0px;
+    padding:          0px 14px 0px 18px;
+    spacing:          10px;
+    children:         [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color: @well;
+    text-color:       @blue;
+    font:             "JetBrainsMono Nerd Font Mono Bold 13";
+    vertical-align:   0.5;
+    expand:           false;
+}
+
+entry {
+    background-color: @well;
+    text-color:       @bright;
+    font:             "JetBrainsMono Nerd Font Mono Bold 12";
+    vertical-align:   0.5;
+    placeholder:      "";
+    placeholder-color: @mdblue;
+    expand:           true;
+}
+
+/* ── ENTRY LIST ── expands to fill whatever space remains after the inputbar. */
+listview {
+    background-color: @seg;
+    expand:           true;
+    spacing:          2px;
+    lines:            8;
+    columns:          1;
+    scrollbar:        false;
+    fixed-height:     false;
+}
+
+element {
+    background-color: @seg;
+    orientation:      horizontal;
+    height:           38px;
+    spacing:          0px;
+    padding:          0px;
+}
+
+element selected { background-color: @mdblue; }
+
+element-icon {
+    background-color: @blue;
+    size:             20px;
+    padding:          9px 18px;
+}
+
+element.alternate.normal element-icon { background-color: @vol; }
+element selected element-icon { background-color: @bright; }
+
+element-text {
+    background-color: transparent;
+    text-color:       @ghost;
+    font:             "JetBrainsMono Nerd Font Mono 11";
+    vertical-align:   0.5;
+    padding:          0px 12px;
+    expand:           true;
+}
+
+element selected element-text { text-color: @star; }

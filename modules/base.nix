@@ -32,8 +32,9 @@
   services.tlp = {
     enable = true;
     settings = {
-      START_CHARGE_THRESH_BAT0 = 75;
+      START_CHARGE_THRESH_BAT0 = 60;
       STOP_CHARGE_THRESH_BAT0 = 80;
+      USB_DENYLIST = "2109:2817 2109:0817"; # iiyama monitor VIA Labs hub
     };
   };
 

@@ -42,7 +42,7 @@
         "scroll-step": 1
     },
     "custom/vpn": {
-        "exec": "systemctl is-active --quiet openvpn-isys.service && printf '{\"text\":\"\",\"class\":\"active\",\"tooltip\":\"VPN: ON\"}' || printf '{\"text\":\"\",\"class\":\"inactive\",\"tooltip\":\"VPN: OFF\"}'",
+        "exec": "systemctl is-active --quiet openvpn-isys.service && printf '{\"text\":\"\",\"class\":\"active\",\"tooltip\":\"VPN active\"}' || printf '{\"text\":\"\",\"class\":\"inactive\",\"tooltip\":\"VPN inactive\"}'",
         "return-type": "json",
         "interval": 5,
         "on-click": "systemctl is-active --quiet openvpn-isys.service && sudo systemctl stop openvpn-isys.service || sudo systemctl start openvpn-isys.service; pkill -RTMIN+8 waybar",

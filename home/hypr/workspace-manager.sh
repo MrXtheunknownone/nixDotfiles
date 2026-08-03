@@ -7,7 +7,7 @@ hl_dispatch() {
 }
 
 init_monitors() {
-    sleep 0.5  # let Hyprland settle after start/reconnect
+    sleep 1  # let Hyprland settle after start/reconnect
     readarray -t monitors < <(hyprctl monitors -j | jq -r 'sort_by(.x) | .[].name')
     local i=1
     for mon in "${monitors[@]}"; do
@@ -16,6 +16,31 @@ init_monitors() {
         hl_dispatch "hl.dsp.focus({ workspace = $i })"
         ((i++))
     done
+}
+
+save_state() {
+    local state_file="/tmp/hypr-ws-monitor-${HYPRLAND_INSTANCE_SIGNATURE}.state"
+    local monitors_json
+    monitors_json=$(hyprctl monitors -j | jq 'sort_by(.x) | [.[].name]')
+    hyprctl workspaces -j | jq -r \
+        --argjson mons "$monitors_json" \
+        '.[] | . as $ws | select(($mons | index($ws.monitor)) != null) |
+         "\($ws.id) \($mons | index($ws.monitor))"' \
+        > "$state_file"
+}
+
+restore_state() {
+    local state_file="/tmp/hypr-ws-monitor-${HYPRLAND_INSTANCE_SIGNATURE}.state"
+    [ -f "$state_file" ] || return 0
+    readarray -t monitors < <(hyprctl monitors -j | jq -r 'sort_by(.x) | .[].name')
+    local num_monitors=${#monitors[@]}
+    [ "$num_monitors" -eq 0 ] && return 0
+    while read -r ws_id mon_idx; do
+        if [ "$mon_idx" -ge "$num_monitors" ]; then
+            mon_idx=$(( num_monitors - 1 ))
+        fi
+        hl_dispatch "hl.dsp.workspace.move({ workspace = $ws_id, monitor = '${monitors[$mon_idx]}' })"
+    done < "$state_file"
 }
 
 new_workspace() {
@@ -64,6 +89,11 @@ handle_event() {
     case "${1%%>>*}" in
         monitoradded)
             init_monitors
+            restore_state
+            save_state
+            ;;
+        createworkspace|destroyworkspace)
+            save_state
             ;;
     esac
 }
@@ -71,6 +101,7 @@ handle_event() {
 case "$1" in
     daemon)
         init_monitors
+        save_state
         socat - UNIX-CONNECT:"$SOCKET" | while read -r line; do
             handle_event "$line"
         done

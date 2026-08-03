@@ -8,6 +8,8 @@
 @define-color bright  #41c4f7;
 @define-color mdblue  #2a7193;
 @define-color term    #e7442a;
+@define-color vol     #ff977b;
+@define-color vpn     #4daa6e;
 @define-color gray    #6d748c;
 @define-color lgray   #9ea5ba;
 @define-color ghost   #d2d5df;
@@ -26,92 +28,87 @@
   transition: none;
 }
 
+/* Red outer frame — the LCARS terminator column, pill on both left corners */
 window {
-  background-color: @bg;
-  border-radius: 11px 3px 3px 11px;
+  background-color: @term;
+  border-radius: 22px 4px 4px 22px;
 }
 
-/* Red LCARS terminator rail — ID selector beats * { border: none } */
+/* Black content area inset from the red frame */
 #outer-box {
   background-color: @bg;
-  border-left: 14px solid @term;
+  margin: 3px;
+  border-radius: 20px 2px 2px 20px;
   padding: 0;
 }
 
+/* Search input — dark-blue fill, continues the left pill column shape */
 #input {
   background-color: @well;
   color: @bright;
   caret-color: @bright;
-  padding: 0 10px;
-  margin: 0 0 4px 0;
-  min-height: 28px;
-  font-family: "JetBrainsMono Nerd Font Mono", "Antonio", monospace;
+  padding: 0 14px 0 18px;
+  min-height: 40px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  border-radius: 20px 2px 0 0;
 }
 
-#input:focus {
-  box-shadow: none;
-}
+#input:focus { box-shadow: none; }
 
-#scroll {
-  background-color: @bg;
-}
+/* Camouflage the GtkSearchEntry magnifying-glass icon against the input background */
+#input > image { color: @well; }
 
-#inner-box {
-  background-color: @bg;
-  padding: 0;
-}
+#scroll { background-color: @bg; }
+#inner-box { background-color: @bg; padding: 0; }
 
+/* Entry rows — dark background, no padding (icon block sits flush left) */
 #entry {
   background-color: @seg;
-  padding: 4px 10px;
+  padding: 0;
   margin: 0 0 2px 0;
+  min-height: 38px;
 }
 
+/* Last visible entry gets the bottom-left pill — the sidebar terminator */
 #entry:last-child {
   margin-bottom: 0;
+  border-radius: 0 0 0 18px;
 }
 
-#entry:selected {
-  background-color: @bright;
-}
-
-/* Constrain icon to 16px and force symbolic (monochrome) rendering */
+/* Colored icon block — the LCARS left column segment per row.
+   Wide enough to read as a block, not a rail. */
 #entry image {
-  min-width: 16px;
-  min-height: 16px;
-  max-width: 16px;
-  max-height: 16px;
-  -gtk-icon-size: 16px;
-  -gtk-icon-style: symbolic;
-  color: @lgray;
-  margin-right: 8px;
+  min-width: 56px;
+  min-height: 38px;
+  color: @ink;
+  margin-right: 10px;
+  background-color: @mdblue;
 }
 
+/* 4-color cycle: blue → orange → teal → green */
+#entry:nth-child(4n+1) image { background-color: @blue; }
+#entry:nth-child(4n+2) image { background-color: @vol; }
+#entry:nth-child(4n+3) image { background-color: @mdblue; }
+#entry:nth-child(4n+4) image { background-color: @vpn; }
+
+/* Selected state */
+#entry:selected {
+  background-color: @mdblue;
+}
 #entry:selected image {
+  background-color: @bright;
   color: @ink;
 }
 
-#text {
-  color: @ghost;
-  margin: 0;
-  padding: 0;
-}
-
-#text:selected {
-  color: @ink;
-}
+#text { color: @ghost; margin: 0; padding: 0; }
+#text:selected { color: @ghost; }
 
 tooltip {
   background-color: @well;
   border: 1px solid @blue;
   border-radius: 6px;
 }
-
-tooltip label {
-  color: @ghost;
-  font-weight: 600;
-  padding: 2px 4px;
-}
+tooltip label { color: @ghost; font-weight: 600; padding: 2px 4px; }

@@ -5,6 +5,7 @@
     wget
     btop
     tree
+    unzip
     fzf
     ripgrep
     ncdu

@@ -14,6 +14,7 @@
     hyprpaper
     waybar
     wofi
+    rofi
     swaynotificationcenter
 	  libnotify
     socat
@@ -22,6 +23,7 @@
     slurp
     swappy
     wl-clipboard
+    brightnessctl
   ];
 
   xdg.portal = {

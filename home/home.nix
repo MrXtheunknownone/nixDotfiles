@@ -87,6 +87,17 @@
   xdg.configFile."wofi/config".source = ./wofi/config;
   xdg.configFile."wofi/style.css".source = ./wofi/style.css;
 
+  # Rofi — LCARS launcher (SUPER+Space)
+  # Minimal config.rasi: just point at the theme; all configuration lives in lcars.rasi.
+  xdg.configFile."rofi/config.rasi".text = ''
+    @theme "/home/tim/.config/rofi/lcars.rasi"
+  '';
+  xdg.configFile."rofi/lcars.rasi".source = ./rofi/lcars.rasi;
+  xdg.configFile."rofi/lcars-launch.sh" = {
+    source = ./rofi/lcars-launch.sh;
+    executable = true;
+  };
+
   # Vivaldi: shadow the package's own launcher entry with one that forces
   # native Wayland (Ozone) instead of XWayland under Hyprland.
   # xdg.desktopEntries.vivaldi-stable = {
