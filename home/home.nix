@@ -1,4 +1,7 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+let
+  sunity-cursors = pkgs.callPackage ../packages/sunity-cursors.nix { };
+in {
   imports = [ ../packages/security.nix ];
 
   xdg.autostart.enable = true;
@@ -13,8 +16,8 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.nordzy-cursor-theme;
-    name = "Nordzy-hyprcursors";
+    package = sunity-cursors;
+    name = "Sunity-cursors";
     size = 16;
   };
 

@@ -125,15 +125,14 @@ entry {
     expand:           true;
 }
 
-/* ── ENTRY LIST ── expands to fill whatever space remains after the inputbar. */
+/* ── ENTRY LIST ── fixed to exactly 8 rows; no expand so there's no slack. */
 listview {
     background-color: @seg;
-    expand:           true;
     spacing:          2px;
     lines:            8;
     columns:          1;
     scrollbar:        false;
-    fixed-height:     false;
+    fixed-height:     true;
 }
 
 element {
