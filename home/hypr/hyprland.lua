@@ -46,6 +46,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh daemon")
+    hl.exec_cmd("bash /home/tim/.config/hypr/wallpaper-manager.sh daemon")
     -- hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
 end)
 

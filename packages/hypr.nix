@@ -24,6 +24,7 @@
     swappy
     wl-clipboard
     brightnessctl
+    playerctl
   ];
 
   xdg.portal = {

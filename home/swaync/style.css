@@ -1,0 +1,192 @@
+/* LCARS Picard swaync theme — mirrors home/waybar/colors.css */
+@define-color bg      #000000;
+@define-color ink     #06080c;
+@define-color well    #1c3c55;
+@define-color seg     #2f3749;
+@define-color blue    #37a6d1;
+@define-color bright  #41c4f7;
+@define-color mdblue  #2a7193;
+@define-color term    #e7442a;
+@define-color notif   #ff6753;
+@define-color vol     #ff977b;
+@define-color vpn     #4daa6e;
+@define-color gray    #6d748c;
+@define-color lgray   #9ea5ba;
+@define-color ghost   #d2d5df;
+@define-color star    #f3f4f7;
+
+* {
+  font-family: "JetBrainsMono Nerd Font Mono", "Antonio", monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+/* ---- Popup (floating) notifications ---- */
+.floating-notifications.background .notification-row .notification-background {
+  background: @ink;
+  border: 1px solid @mdblue;
+  border-radius: 12px;
+  margin: 8px;
+  padding: 0;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+  border-radius: 12px;
+}
+
+/* ---- Control center ---- */
+.control-center {
+  background: alpha(@bg, 0.92);
+  border: 1px solid @blue;
+  border-radius: 14px;
+  color: @ghost;
+  padding: 12px;
+}
+
+.control-center .control-center-list {
+  background: transparent;
+}
+
+.control-center .control-center-list-placeholder {
+  color: @gray;
+  opacity: 0.6;
+}
+
+/* ---- Notification blocks (shared by popup + center) ---- */
+.notification {
+  background: transparent;
+  border-radius: 12px;
+  margin: 6px 4px;
+  padding: 0;
+}
+
+.notification-background .notification-content {
+  background: @seg;
+  border-radius: 12px;
+  padding: 10px;
+  color: @ghost;
+}
+
+.notification-background .notification-content .summary {
+  color: @star;
+  font-weight: bold;
+}
+
+.notification-background .notification-content .time {
+  color: @lgray;
+  font-size: 12px;
+}
+
+.notification-background .notification-content .body {
+  color: @ghost;
+}
+
+/* Critical notifications get the red LCARS terminator accent */
+.notification.critical .notification-content {
+  border-left: 4px solid @term;
+}
+
+/* Action buttons under a notification */
+.notification-action {
+  background: @well;
+  border: 1px solid @mdblue;
+  border-radius: 8px;
+  color: @ghost;
+  margin: 4px;
+}
+
+.notification-action:hover {
+  background: @mdblue;
+  color: @star;
+}
+
+/* Close button */
+.close-button {
+  background: @term;
+  border-radius: 999px;
+  color: @bg;
+  margin: 6px;
+  padding: 2px;
+}
+
+.close-button:hover {
+  background: @notif;
+}
+
+/* ---- Title widget ---- */
+.widget-title {
+  color: @bright;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 6px 4px 10px 4px;
+}
+
+.widget-title > button {
+  background: @well;
+  border: 1px solid @mdblue;
+  border-radius: 8px;
+  color: @ghost;
+  padding: 4px 12px;
+}
+
+.widget-title > button:hover {
+  background: @mdblue;
+  color: @star;
+}
+
+/* ---- Do Not Disturb widget ---- */
+.widget-dnd {
+  color: @ghost;
+  margin: 4px;
+}
+
+.widget-dnd > switch {
+  background: @seg;
+  border-radius: 999px;
+}
+
+.widget-dnd > switch:checked {
+  background: @blue;
+}
+
+.widget-dnd > switch slider {
+  background: @ghost;
+  border-radius: 999px;
+}
+
+/* ---- MPRIS media player widget ---- */
+.widget-mpris {
+  background: @ink;
+  border: 1px solid @mdblue;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 6px 4px;
+}
+
+.widget-mpris-player {
+  background: transparent;
+  padding: 8px;
+}
+
+.widget-mpris-title {
+  color: @star;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.widget-mpris-subtitle {
+  color: @lgray;
+  font-size: 13px;
+}
+
+.widget-mpris button {
+  background: transparent;
+  border-radius: 999px;
+  color: @blue;
+  padding: 4px;
+}
+
+.widget-mpris button:hover {
+  background: @well;
+  color: @bright;
+}

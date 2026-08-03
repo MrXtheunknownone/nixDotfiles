@@ -30,4 +30,5 @@
   environment.sessionVariables = {
     PATH = [ "$HOME/.cargo/bin" ];
   };
+  environment.variables.EDITOR = "neovim";
 }

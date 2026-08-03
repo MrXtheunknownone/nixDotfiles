@@ -55,6 +55,10 @@ in {
     source = ./hypr/workspace-manager.sh;
     executable = true;
   };
+  xdg.configFile."./hypr/wallpaper-manager.sh" = {
+    source = ./hypr/wallpaper-manager.sh;
+    executable = true;
+  };
 
   home.file."pictures/wallpapers".source = ./wallpapers;
   services.hyprpaper = {
@@ -76,6 +80,10 @@ in {
     # package = { };
     # importantPrefixes = { };
   };
+
+  # Swaync (notification center — enables the MPRIS media-player widget)
+  xdg.configFile."swaync/config.json".source = ./swaync/config.json;
+  xdg.configFile."swaync/style.css".source = ./swaync/style.css;
 
   # Kitty
   xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
