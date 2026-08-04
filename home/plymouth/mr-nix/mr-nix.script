@@ -7,4 +7,77 @@ logo_x = Math.Int((Window.GetWidth() - logo_img.GetWidth()) / 2);
 logo_y = Math.Int((Window.GetHeight() - logo_img.GetHeight()) / 2) - 60;
 logo_sprite.SetX(logo_x);
 logo_sprite.SetY(logo_y);
-logo_sprite.SetOpacity(1);
+logo_sprite.SetOpacity(0);
+
+title_img = Image("title.png");
+title_sprite = Sprite(title_img);
+title_sprite.SetX(Math.Int((Window.GetWidth() - title_img.GetWidth()) / 2));
+title_sprite.SetY(logo_y + logo_img.GetHeight() + 24);
+title_sprite.SetOpacity(0);
+
+bar_w = 320;
+bar_h = 2;
+bar_x = Math.Int(Window.GetWidth() / 2 - bar_w / 2);
+bar_y = Window.GetHeight() - 120;
+
+bar_bg = Image.CreateSolidColorImage(bar_w, bar_h, 0.914, 0.918, 0.902, 0.12);
+bar_bg_sprite = Sprite(bar_bg);
+bar_bg_sprite.SetX(bar_x);
+bar_bg_sprite.SetY(bar_y);
+
+bar_fill = Image.CreateSolidColorImage(2, bar_h, 0.184, 0.710, 0.298, 1);
+bar_fill_sprite = Sprite(bar_fill);
+bar_fill_sprite.SetX(bar_x);
+bar_fill_sprite.SetY(bar_y);
+
+progress = 0;
+frame = 0;
+
+fun refresh_callback() {
+  frame++;
+  if (logo_sprite.GetOpacity() < 1) {
+    logo_sprite.SetOpacity(Math.Min(1, logo_sprite.GetOpacity() + 0.025));
+  }
+  if (frame > 30 && title_sprite.GetOpacity() < 1) {
+    title_sprite.SetOpacity(Math.Min(1, title_sprite.GetOpacity() + 0.02));
+  }
+  if (progress > 0) {
+    fill_w = Math.Max(2, Math.Int(bar_w * progress));
+    bar_fill_sprite.SetImage(
+      Image.CreateSolidColorImage(fill_w, bar_h, 0.184, 0.710, 0.298, 1)
+    );
+  }
+}
+
+fun boot_progress_callback(time, boot_progress) {
+  progress = boot_progress;
+}
+
+prompt_label = Sprite();
+prompt_label.SetOpacity(0);
+bullets_label = Sprite();
+bullets_label.SetOpacity(0);
+
+fun display_password_callback(prompt, bullet_count) {
+  prompt_img = Image.Text(prompt, 0.914, 0.918, 0.902, 0.9, "monospace 18");
+  prompt_label.SetImage(prompt_img);
+  prompt_label.SetX(Math.Int(Window.GetWidth() / 2 - prompt_img.GetWidth() / 2));
+  prompt_label.SetY(logo_y + logo_img.GetHeight() + 60);
+  prompt_label.SetOpacity(1);
+
+  bullets = "";
+  i = 0;
+  while (i < bullet_count) {
+    bullets = bullets + "•";
+    i++;
+  }
+  dots_img = Image.Text(bullets, 0.184, 0.710, 0.298, 1, "monospace 18");
+  bullets_label.SetImage(dots_img);
+  bullets_label.SetX(Math.Int(Window.GetWidth() / 2 - dots_img.GetWidth() / 2));
+  bullets_label.SetY(logo_y + logo_img.GetHeight() + 94);
+  bullets_label.SetOpacity(1);
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);
+Plymouth.SetBootProgressFunction(boot_progress_callback);
+Plymouth.SetDisplayPasswordFunction(display_password_callback);

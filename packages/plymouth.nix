@@ -14,5 +14,6 @@ in {
     enable = true;
     theme = "mr-nix";
     themePackages = [ theme ];
+    extraConfig = "Debug=true";
   };
 }
