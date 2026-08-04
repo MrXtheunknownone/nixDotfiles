@@ -4,5 +4,5 @@ Description=Mr. Nix minimal boot splash
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/mr-nix
-ScriptFile=/usr/share/plymouth/themes/mr-nix/mr-nix.script
+ImageDir=.
+ScriptFile=mr-nix.script

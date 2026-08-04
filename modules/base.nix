@@ -28,7 +28,15 @@
     loader.efi.canTouchEfiVariables = true;
 
     consoleLogLevel = 3;
-    kernelParams = [ "quiet" "splash" "rd.udev.log_level=3" "rd.systemd.show_status=auto" ];
+    kernelParams = [ 
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+      "udev.log_priority=3"
+    ];
 
     kernelModules = [ "evdi" ];
     extraModulePackages = [
@@ -37,6 +45,14 @@
     initrd = {
       verbose = false;
       systemd.enable = true;
+      kernelModules = [ "amdgpu" ];
+      availableKernelModules = [
+        "drm"
+        "fb_sys_fops"
+        "syscopyarea"
+        "sysfillrect"
+        "sysimgblt"
+      ];
     };
   };
 
