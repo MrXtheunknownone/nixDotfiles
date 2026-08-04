@@ -19,6 +19,7 @@
           ac    = ''!f() { git add . && git commit -m "$@"; }; f'';
           acp   = ''!f() { git add . && git commit -m "$@"; git push; }; f'';
           pmp   = ''!git stash -um "Stashing for origin/main into $(git rev-parse --abbrev-ref HEAD)" && git pull origin main && git stash pop'';
+          new   = ''!f() { branch=$(echo "$@" | tr ' ' '_'); git checkout -b "$branch" && git push -u origin "$branch"; }; f'';
         };
         include.path         = "~/.config/git/identity";
         pull.rebase          = false;
