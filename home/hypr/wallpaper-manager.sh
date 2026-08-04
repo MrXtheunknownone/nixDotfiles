@@ -5,7 +5,7 @@ WALL_DIR="$HOME/pictures/wallpapers"
 
 # Spare wallpapers, rotated across any extra (non-laptop, non-ultrawide) monitor.
 SPARES=(
-    "voyager_blue_multiplanets.png"
+    "enterprise_a_blue.png"
     "enterprise_blue_multiplanets.png"
     "two_ships.png"
 )

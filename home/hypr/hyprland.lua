@@ -14,12 +14,28 @@ local master_monitor = "eDP-1"
 
 -- Monitors
 
--- Ultrawide
+-- Ultrawide (home)
 hl.monitor({
     output = "desc:Iiyama North America PL4580DQ 1222642810142",
     mode = "5120x1440@120",
     position = "0x0",
     scale = "1.3333333"
+})
+
+-- Office: Dell left (WS1)
+hl.monitor({
+    output = "desc:Dell Inc. DELL U2412M 0FFXD39E3GYL",
+    mode = "1920x1200@59.95",
+    position = "0x0",
+    scale = "1.0"
+})
+
+-- Office: Dell middle (WS2)
+hl.monitor({
+    output = "desc:Dell Inc. DELL U2412M YPPY07A70P3L",
+    mode = "1920x1200@59.95",
+    position = "1920x0",
+    scale = "1.0"
 })
 
 hl.monitor({
@@ -233,6 +249,7 @@ end
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("notify-send $(date +%T)"))
 hl.bind(mainMod .. " + M", toggle_inactive_opacity)
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("wayscriber --daemon-toggle"))
 hl.bind(mainMod .. " + Z", hl.dsp.window.center())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 

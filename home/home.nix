@@ -2,7 +2,7 @@
 let
   sunity-cursors = pkgs.callPackage ../packages/sunity-cursors.nix { };
 in {
-  imports = [ ../packages/security.nix ];
+  imports = [ ../packages/security.nix ./zsh.nix ./kitty.nix ];
 
   xdg.autostart.enable = true;
 
@@ -85,8 +85,7 @@ in {
   xdg.configFile."swaync/config.json".source = ./swaync/config.json;
   xdg.configFile."swaync/style.css".source = ./swaync/style.css;
 
-  # Kitty
-  xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
+  # Kitty config is managed by programs.kitty in ./kitty.nix
 
   # Waybar
   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;

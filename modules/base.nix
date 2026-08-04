@@ -22,8 +22,33 @@
     "flakes"
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
+    extraModulePackages = [
+      config.boot.kernelPackages.evdi
+    ];
+    initrd = {
+      kernelModules = [
+        "evdi"
+      ];
+    };
+  };
+
+  services.udev.packages = [ pkgs.displaylink ];
+
+  systemd.services.dlm = {
+    description = "DisplayLink Manager";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.displaylink}/bin/DisplayLinkManager";
+      Restart = "always";
+    };
+  };
+
+  environment.systemPackages = [ pkgs.displaylink ];
 
   networking.networkmanager.enable = true;
 
