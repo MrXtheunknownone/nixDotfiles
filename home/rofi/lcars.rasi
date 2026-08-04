@@ -3,10 +3,11 @@
    Ctrl+J / Ctrl+K cycle through modes in-place.                          */
 
 configuration {
-    modi:                "drun,window,run";
+    modi:                "THEME:~/.local/bin/lcars-theme-menu,drun,window,run";
     show-icons:          true;
     sidebar-mode:        true;
     drun-display-format: "{name}";
+    display-THEME:       "THEME";
     display-drun:        "APP";
     display-window:      "WIN";
     display-run:         "RUN";
@@ -16,22 +17,12 @@ configuration {
     kb-mode-previous:    "Control+k";
 }
 
-* {
-    bg:      #000000;
-    ink:     #06080c;
-    well:    #1c3c55;
-    seg:     #2f3749;
-    blue:    #37a6d1;
-    bright:  #41c4f7;
-    mdblue:  #2a7193;
-    term:    #e7442a;
-    vol:     #ff977b;
-    vpn:     #4daa6e;
-    gray:    #6d748c;
-    lgray:   #9ea5ba;
-    ghost:   #d2d5df;
-    star:    #f3f4f7;
+/* Colors loaded at runtime by lcars-theme-switch into ~/.config/rofi/colors.rasi.
+   Absolute path required — lcars.rasi is a Nix store symlink so relative imports
+   resolve against the store path, not ~/.config/rofi/. */
+@import "/home/tim/.config/rofi/colors.rasi"
 
+* {
     font:             "JetBrainsMono Nerd Font Mono 11";
     background-color: transparent;
     text-color:       @ghost;

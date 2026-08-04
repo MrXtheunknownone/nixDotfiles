@@ -1,19 +1,5 @@
-/* LCARS Picard swaync theme — mirrors home/waybar/colors.css */
-@define-color bg      #000000;
-@define-color ink     #06080c;
-@define-color well    #1c3c55;
-@define-color seg     #2f3749;
-@define-color blue    #37a6d1;
-@define-color bright  #41c4f7;
-@define-color mdblue  #2a7193;
-@define-color term    #e7442a;
-@define-color notif   #ff6753;
-@define-color vol     #ff977b;
-@define-color vpn     #4daa6e;
-@define-color gray    #6d748c;
-@define-color lgray   #9ea5ba;
-@define-color ghost   #d2d5df;
-@define-color star    #f3f4f7;
+/* Colors loaded at runtime by lcars-theme-switch into ~/.config/swaync/colors.css */
+@import url("file:///home/tim/.config/swaync/colors.css");
 
 * {
   font-family: "JetBrainsMono Nerd Font Mono", "Antonio", monospace;

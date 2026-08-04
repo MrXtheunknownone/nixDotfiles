@@ -30,6 +30,11 @@
       rebuild = "sudo nixos-rebuild switch --flake /home/tim/.dotfiles";
     };
 
+    # The Ctrl + Y has to be checked, because it can also mean yank
+    initContent = ''
+      bindkey '^Y' autosuggest-accept
+    '';
+
   };
 
   programs.starship = {
