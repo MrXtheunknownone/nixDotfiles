@@ -9,6 +9,7 @@
     ../packages/git.nix
     ../packages/hypr.nix
     ../packages/media.nix
+    ../packages/plymouth.nix
     ../packages/shell.nix
     ../packages/social.nix
     ../packages/sound.nix
@@ -26,13 +27,16 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
+    consoleLogLevel = 3;
+    kernelParams = [ "quiet" "splash" "rd.udev.log_level=3" "rd.systemd.show_status=auto" ];
+
+    kernelModules = [ "evdi" ];
     extraModulePackages = [
       config.boot.kernelPackages.evdi
     ];
     initrd = {
-      kernelModules = [
-        "evdi"
-      ];
+      verbose = false;
+      systemd.enable = true;
     };
   };
 
