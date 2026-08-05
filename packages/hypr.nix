@@ -19,9 +19,6 @@
 	  libnotify
     socat
     jq
-    grim
-    slurp
-    swappy
     wl-clipboard
     brightnessctl
     playerctl

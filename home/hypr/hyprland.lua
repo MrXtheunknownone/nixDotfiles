@@ -236,8 +236,9 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("vivaldi"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("pkill -9 waybar || waybar &"))
 
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("Print", hl.dsp.exec_cmd('grim -o "$(hyprctl monitors -j | jq -r \'.[] | select(.focused) | .name\')" - | swappy -f -'))
-hl.bind("SUPER + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
+hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd('pgrep -x wf-recorder && pkill -SIGINT wf-recorder || mkdir -p ~/Videos/recordings && wf-recorder -g "$(slurp)" -f ~/Videos/recordings/recording_$(date +%d.%m.%Y_%H-%M-%S).mp4'))
 
 local isInactiveTransparent = true
 local function toggle_inactive_opacity()
