@@ -19,6 +19,7 @@
     python3
     javacc
     jdk
+    gradle
     dart
     nodejs
 

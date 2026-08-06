@@ -5,6 +5,7 @@
 
     font = {
       name = "JetBrainsMono Nerd Font Mono";
+      size = 9;
     };
 
     settings = {

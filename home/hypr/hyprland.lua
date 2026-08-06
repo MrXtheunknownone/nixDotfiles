@@ -63,6 +63,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh daemon")
     hl.exec_cmd("bash /home/tim/.config/hypr/wallpaper-manager.sh daemon")
+    hl.exec_cmd("wayscriber --daemon")
     -- hl.exec_cmd("hyprctl setcursor nordic_cursors_scalable 24")
 end)
 
@@ -192,6 +193,8 @@ hl.config({
         kb_options   = "",
         kb_rules     = "",
 
+        numlock_by_default = true,
+
         follow_mouse = 1,
 
         sensitivity  = 0.4, -- -1.0 - 1.0, 0 means no modification.
@@ -293,6 +296,9 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + odiaeresis", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + adiaeresis", hl.dsp.focus({ workspace = "e-1" }))
+-- Per-monitor workspace cycle (only cycles workspaces on the focused monitor)
+hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh cycle -1"))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("bash /home/tim/.config/hypr/workspace-manager.sh cycle +1"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
